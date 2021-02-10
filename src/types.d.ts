@@ -33,8 +33,6 @@ export type OperandTypes = 'd8' | 'd16' | 'a8' | 'a16' | 'r8';
 export type OpcodeToken = {
   instruction: string;
   length: number;
-  cycles: { high: number; low: number };
-  flags: Flags | null;
   operand: OperandTypes | null;
 };
 
