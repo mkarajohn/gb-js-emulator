@@ -31,10 +31,9 @@ function generateDisassembledInstructionToken(
         position: `$${zeroPad(index, 4)}`,
         code: opcodeToken.instruction.replace(
           '${OPERAND}',
-          `$${zeroPad(
-            convertNumberToHexString(bytecode[index + 2]) +
-              convertNumberToHexString(bytecode[index + 1]),
-            4
+          `$${zeroPad(convertNumberToHexString(bytecode[index + 2]), 2)}${zeroPad(
+            convertNumberToHexString(bytecode[index + 1]),
+            2
           )}`
         ),
       };
