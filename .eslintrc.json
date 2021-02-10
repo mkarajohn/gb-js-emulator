@@ -1,11 +1,7 @@
 {
-  "extends": [
-    "react-app",
-    "prettier"
-  ],
-  "plugins": [],
+  "extends": ["react-app", "prettier", "plugin:@typescript-eslint/eslint-recommended"],
+  "plugins": ["@typescript-eslint"],
   "rules": {
-
     /* React rules */
     "react/no-direct-mutation-state": "error",
     "react/no-unused-prop-types": "warn",
@@ -25,14 +21,7 @@
     "react/jsx-curly-brace-presence": ["error", "never"],
 
     /* eslint basic rules */
-    "no-unused-vars": [
-          "error",
-          {
-            "args": "all",
-            "argsIgnorePattern": "^__",
-            "varsIgnorePattern": "^__"
-          }
-        ],
+    "no-unused-vars": "off",
     "padding-line-between-statements": [
       "error",
       {
@@ -60,12 +49,20 @@
     {
       "files": ["**/*.ts?(x)"],
       "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "all",
+            "argsIgnorePattern": "^__",
+            "varsIgnorePattern": "^__"
+          }
+        ],
         //    "@typescript-eslint/no-unsafe-return": "error",
-//        "@typescript-eslint/no-explicit-any": "error"
+        "@typescript-eslint/no-explicit-any": "warn"
       }
     }
   ],
-//  "parser": "@typescript-eslint/parser",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
