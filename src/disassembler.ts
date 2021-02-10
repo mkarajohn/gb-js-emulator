@@ -1,8 +1,4 @@
-import {
-  convertHexStringToDecimalNumber,
-  convertNumberToHexString,
-  zeroPadHalfByte,
-} from './utils';
+import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from './utils';
 import { opcodes, cbOpcodes } from './opcodes';
 import type { DisassembledInstructionToken, OpcodeToken } from './types.d';
 
@@ -13,7 +9,7 @@ function generateDisassembledInstructionToken(
 ): DisassembledInstructionToken {
   if (!opcodeToken) {
     return {
-      position: `$${zeroPadHalfByte(index)}`,
+      position: `$${zeroPad(index, 4)}`,
       code: `Unknown opcode`,
     };
   }
@@ -23,27 +19,28 @@ function generateDisassembledInstructionToken(
     case 'r8':
     case 'd8':
       return {
-        position: `$${zeroPadHalfByte(index)}`,
+        position: `$${zeroPad(index, 4)}`,
         code: opcodeToken.instruction.replace(
           '${OPERAND}',
-          `$${convertNumberToHexString(bytecode[index + 1])}`
+          `$${zeroPad(convertNumberToHexString(bytecode[index + 1]), 2)}`
         ),
       };
     case 'a16':
     case 'd16':
       return {
-        position: `$${zeroPadHalfByte(index)}`,
+        position: `$${zeroPad(index, 4)}`,
         code: opcodeToken.instruction.replace(
           '${OPERAND}',
-          `$${zeroPadHalfByte(
+          `$${zeroPad(
             convertNumberToHexString(bytecode[index + 2]) +
-              convertNumberToHexString(bytecode[index + 1])
+              convertNumberToHexString(bytecode[index + 1]),
+            4
           )}`
         ),
       };
     default:
       return {
-        position: `$${zeroPadHalfByte(index)}`,
+        position: `$${zeroPad(index, 4)}`,
         code: `${opcodeToken.instruction}`,
       };
   }
