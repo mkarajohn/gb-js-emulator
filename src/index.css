@@ -40,6 +40,9 @@ body,
 
 
 .bootcode-container {
+}
+
+.disassembled-bootcode-container {
     overflow: auto;
     max-height: 100vh;
 }
