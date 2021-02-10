@@ -1,11 +1,10 @@
 import disassemble from './disassembler';
 import { Fragment, useState } from 'react';
 import bootcode from './bootcode';
+import { MEMORY } from './memory';
 
 function App() {
   const [bootCode, setBootCode] = useState(bootcode);
-
-  console.log(bootCode);
 
   //@ts-ignore
   window.bootCode = bootCode;
