@@ -23,7 +23,7 @@ Memory map
 /*
  * CARTRIDGE ROM 0x0000 - 0x7fff
  */
-// 0x0000 - 0x00ff
+// 0x00ff - 0x0000
 const RESTART_AND_INTERRUPT_VECTORS = new Uint8Array(0x0100);
 // 0x014f - 0x0100
 const CARTRIDGE_HEADER_AREA = new Uint8Array(0x0150 - 0x0100);
