@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.63732a3f.chunk.css",
-    "main.js": "/static/js/main.a9516a9a.chunk.js",
-    "main.js.map": "/static/js/main.a9516a9a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3e61f6aa.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3e61f6aa.js.map",
-    "static/js/2.890b5787.chunk.js": "/static/js/2.890b5787.chunk.js",
-    "static/js/2.890b5787.chunk.js.map": "/static/js/2.890b5787.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.63732a3f.chunk.css.map": "/static/css/main.63732a3f.chunk.css.map",
-    "static/js/2.890b5787.chunk.js.LICENSE.txt": "/static/js/2.890b5787.chunk.js.LICENSE.txt"
+    "main.css": "/gb-js-emulator/static/css/main.63732a3f.chunk.css",
+    "main.js": "/gb-js-emulator/static/js/main.a9516a9a.chunk.js",
+    "main.js.map": "/gb-js-emulator/static/js/main.a9516a9a.chunk.js.map",
+    "runtime-main.js": "/gb-js-emulator/static/js/runtime-main.3b5d3d50.js",
+    "runtime-main.js.map": "/gb-js-emulator/static/js/runtime-main.3b5d3d50.js.map",
+    "static/js/2.890b5787.chunk.js": "/gb-js-emulator/static/js/2.890b5787.chunk.js",
+    "static/js/2.890b5787.chunk.js.map": "/gb-js-emulator/static/js/2.890b5787.chunk.js.map",
+    "index.html": "/gb-js-emulator/index.html",
+    "static/css/main.63732a3f.chunk.css.map": "/gb-js-emulator/static/css/main.63732a3f.chunk.css.map",
+    "static/js/2.890b5787.chunk.js.LICENSE.txt": "/gb-js-emulator/static/js/2.890b5787.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3e61f6aa.js",
+    "static/js/runtime-main.3b5d3d50.js",
     "static/js/2.890b5787.chunk.js",
     "static/css/main.63732a3f.chunk.css",
     "static/js/main.a9516a9a.chunk.js"
