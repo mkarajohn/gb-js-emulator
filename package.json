@@ -1,5 +1,6 @@
 {
   "name": "gb-emu",
+  "homepage": "https://mkarajohn.github.io/gb-js-emulator",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
