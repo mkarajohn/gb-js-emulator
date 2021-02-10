@@ -1,5 +1,22 @@
+import { convertHexStringToDecimalNumber } from './utils';
+
 const bootCode =
-  '31 FE FF AF 21 FF 9F 32 CB 7C 20 FB 21 26 FF 0E 11 3E 80 32 E2 0C 3E F3 E2 32 3E 77 77 3E FC E0 47 11 A8 00 21 10 80 1A CD 95 00 CD 96 00 13 7B FE 34 20 F3 11 D8 00 06 08 1A 13 22 23 05 20 F9 3E 19 EA 10 99 21 2F 99 0E 0C 3D 28 08 32 0D 20 F9 2E 0F 18 F3 67 3E 64 57 E0 42 3E 91 E0 40 04 1E 02 0E 0C F0 44 FE 90 20 FA 0D 20 F7 1D 20 F2 0E 13 24 7C 1E 83 FE 62 28 06 1E C1 FE 64 20 06 7B E2 0C 3E 87 E2 F0 42 90 E0 42 15 20 D2 05 20 4F 16 20 18 CB 4F 06 04 C5 CB 11 17 C1 CB 11 17 05 20 F5 22 23 22 23 C9 00 00 00 0D 00 09 11 09 89 39 08 C9 00 0B 00 03 00 0C CC CC 00 0F 00 00 00 00 EC CC EC CC DD DD 99 99 98 89 EE FB 67 63 6E 0E CC DD 1F 9F 88 88 00 00 00 00 00 00 00 00 21 A8 00 11 A8 00 1A 13 BE 20 FE 23 7D FE 34 20 F5 06 19 78 86 23 05 20 FB 86 20 FE 3E 01 E0 50';
+  /* 00000000 */ '31 fe ff af 21 ff 9f 32 cb 7c 20 fb 21 26 ff 0e ' +
+  /* 00000010 */ '11 3e 80 32 e2 0c 3e f3 e2 32 3e 77 77 3e fc e0 ' +
+  /* 00000020 */ '47 11 04 01 21 10 80 1a cd 95 00 cd 96 00 13 7b ' +
+  /* 00000030 */ 'fe 34 20 f3 11 d8 00 06 08 1a 13 22 23 05 20 f9 ' +
+  /* 00000040 */ '3e 19 ea 10 99 21 2f 99 0e 0c 3d 28 08 32 0d 20 ' +
+  /* 00000050 */ 'f9 2e 0f 18 f3 67 3e 64 57 e0 42 3e 91 e0 40 04 ' +
+  /* 00000060 */ '1e 02 0e 0c f0 44 fe 90 20 fa 0d 20 f7 1d 20 f2 ' +
+  /* 00000070 */ '0e 13 24 7c 1e 83 fe 62 28 06 1e c1 fe 64 20 06 ' +
+  /* 00000080 */ '7b e2 0c 3e 87 e2 f0 42 90 e0 42 15 20 d2 05 20 ' +
+  /* 00000090 */ '4f 16 20 18 cb 4f 06 04 c5 cb 11 17 c1 cb 11 17 ' +
+  /* 000000a0 */ '05 20 f5 22 23 22 23 c9 ce ed 66 66 cc 0d 00 0b ' +
+  /* 000000b0 */ '03 73 00 83 00 0c 00 0d 00 08 11 1f 88 89 00 0e ' +
+  /* 000000c0 */ 'dc cc 6e e6 dd dd d9 99 bb bb 67 63 6e 0e ec cc ' +
+  /* 000000d0 */ 'dd dc 99 9f bb b9 33 3e 3c 42 b9 a5 b9 a5 42 3c ' +
+  /* 000000e0 */ '21 04 01 11 a8 00 1a 13 be 20 fe 23 7d fe 34 20 ' +
+  /* 000000f0 */ 'f5 06 19 78 86 23 05 20 fb 86 20 fe 3e 01 e0 50';
 
 // The bootcode is 256 bytes, so that's how long the typed array should be
 const bootCodeUIntArr = new Uint8Array(256);
@@ -10,7 +27,9 @@ const loopStep = 3;
 
 for (let i = 0; i < bootCode.length; i += loopStep) {
   // Keep the bootCodeUIntArr index incrementing by +1 on each iteration
-  bootCodeUIntArr[i / loopStep] = parseInt(`${bootCode[i]}${bootCode[i + 1]}`, 16);
+  bootCodeUIntArr[i / loopStep] = convertHexStringToDecimalNumber(
+    `${bootCode[i]}${bootCode[i + 1]}`
+  );
 }
 
 export default bootCodeUIntArr;

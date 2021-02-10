@@ -27,9 +27,19 @@ body,
   align-items: center;
 }
 
+#root > * {
+  flex-grow: 1;
+}
+
 .screen-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+.bootcode-container {
+    overflow: auto;
+    max-height: 100vh;
 }
