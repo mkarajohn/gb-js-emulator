@@ -1,44 +1,4 @@
-import * as flags from './flags';
-
-type Registers =
-  | 'A'
-  | 'B'
-  | 'C'
-  | 'D'
-  | 'E'
-  | 'F'
-  | 'H'
-  | 'L'
-  | 'AF'
-  | 'BC'
-  | 'DE'
-  | 'HL'
-  | 'SP'
-  | 'PC';
-
-type FlagState = 'depends' | 'set' | 'reset';
-
-type Flags = {
-  Z?: FlagState;
-  N?: FlagState;
-  H?: FlagState;
-  C?: FlagState;
-};
-
-// d8  means immediate 8 bit data
-// d16 means immediate 16 bit data
-// a8  means 8 bit unsigned data, which are added to $FF00 in certain instructions (replacement for missing IN and OUT instructions)
-// a16 means 16 bit address
-// r8  means 8 bit signed data, which are added to program counter
-type OperandTypes = 'd8' | 'd16' | 'a8' | 'a16' | 'r8';
-
-export type OpcodeToken = {
-  instruction: string;
-  length: number;
-  cycles: { high: number; low: number };
-  flags: Flags | null;
-  operand: OperandTypes | null;
-};
+import type { Flags, OperandTypes, OpcodeToken } from './types.d';
 
 function generateOpcodeToken(
   instruction: string,

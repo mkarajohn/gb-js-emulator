@@ -7,6 +7,7 @@ function App() {
 
   console.log(bootCode);
 
+  //@ts-ignore
   window.bootCode = bootCode;
 
   return (
@@ -22,13 +23,16 @@ function App() {
             <input
               type="file"
               onChange={(e) => {
+                //@ts-ignore
                 if (e.target.files.length) {
                   const reader = new FileReader();
 
                   reader.onload = function (e) {
+                    //@ts-ignore
                     setBootCode(new Uint8Array(e.target.result));
                   };
 
+                  //@ts-ignore
                   reader.readAsArrayBuffer(e.target.files[0]);
                 }
               }}
@@ -97,7 +101,7 @@ function App() {
             <h2>Disassembled boot code</h2>
             <code>
               <pre>
-                {disassemble(bootCode).map((line) => {
+                {disassemble(bootcode).map((line) => {
                   return (
                     <Fragment key={line.position}>
                       <span>

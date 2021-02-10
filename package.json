@@ -26,7 +26,7 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "./.eslintrc.json"
+      "eslintrc.json"
     ]
   },
   "browserslist": {

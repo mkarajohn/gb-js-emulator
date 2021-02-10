@@ -4,12 +4,7 @@ import {
   zeroPadHalfByte,
 } from './utils';
 import { opcodes, cbOpcodes } from './opcodes';
-import type { OpcodeToken } from './opcodes';
-
-type DisassembledInstructionToken = {
-  position: string;
-  code: string;
-};
+import type { DisassembledInstructionToken, OpcodeToken } from './types.d';
 
 function generateDisassembledInstructionToken(
   opcodeToken: OpcodeToken | undefined,
