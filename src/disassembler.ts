@@ -27,6 +27,13 @@ function generateDisassembledInstruction(
         position: `$${zeroPadHalfByte(index)}`,
         code: `${opcodeToken.instruction},${opcodeToken.operand}`,
       };
+    case 'r8':
+      return {
+        position: `$${zeroPadHalfByte(index)}`,
+        code: `${opcodeToken.instruction},signed 0x${convertNumberToHexString(
+          bytecode[index + 1]
+        )}`,
+      };
     case 'd16':
       return {
         position: `$${zeroPadHalfByte(index)}`,
@@ -51,6 +58,12 @@ function disassemble(bytecode: Uint8Array) {
 
     switch (opcode) {
       case convertHexStringToDecimalNumber('0x00'): {
+        const opcodeToken = opcodes[opcode];
+        disassembledCode.push(generateDisassembledInstruction(opcodeToken, bytecode, i));
+        i += opcodeToken.length;
+        break;
+      }
+      case convertHexStringToDecimalNumber('0x20'): {
         const opcodeToken = opcodes[opcode];
         disassembledCode.push(generateDisassembledInstruction(opcodeToken, bytecode, i));
         i += opcodeToken.length;
@@ -88,13 +101,14 @@ function disassemble(bytecode: Uint8Array) {
           disassembledCode.push(
             generateDisassembledInstruction(referencedObOpcodeToken, bytecode, i)
           );
+          i += referencedObOpcodeToken.length;
         } else {
           disassembledCode.push({
             position: `$${zeroPadHalfByte(i)}`,
             code: `Unknown opcode`,
           });
+          i += opcodeToken.length;
         }
-        i += opcodeToken.length;
         break;
       }
       default:

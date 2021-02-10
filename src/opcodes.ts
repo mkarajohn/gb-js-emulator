@@ -35,7 +35,7 @@ type OperandTypes = 'd8' | 'd16' | 'a8' | 'a16' | 'r8' | Registers;
 export type OpcodeToken = {
   instruction: string;
   length: number;
-  cycles: number;
+  cycles: { high: number; low: number };
   flags: Flags | null;
   operand: OperandTypes | null;
 };
@@ -43,14 +43,14 @@ export type OpcodeToken = {
 function generateOpcodeToken(
   instruction: string,
   length: number,
-  cycles: number,
+  cycles: number | { high: number; low: number },
   flags: Flags | null = null,
   operandType: OperandTypes | null = null
 ): OpcodeToken {
   return {
     instruction,
     length,
-    cycles,
+    cycles: typeof cycles === 'number' ? { high: cycles, low: cycles } : cycles,
     flags,
     operand: operandType,
   };
@@ -60,6 +60,7 @@ const opcodes: OpcodeToken[] = [];
 const cbOpcodes: OpcodeToken[] = [];
 
 opcodes[0x00] = generateOpcodeToken('NOP', 1, 4);
+opcodes[0x20] = generateOpcodeToken('JR NZ', 2, { high: 12, low: 8 }, undefined, 'r8');
 opcodes[0x21] = generateOpcodeToken('LD HL', 3, 12, undefined, 'd16');
 opcodes[0x31] = generateOpcodeToken('LD SP', 3, 12, undefined, 'd16');
 opcodes[0x32] = generateOpcodeToken('LD (HL-)', 1, 8, undefined, 'A');
