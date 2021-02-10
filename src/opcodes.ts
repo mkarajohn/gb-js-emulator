@@ -20,6 +20,11 @@ const opcodes: (OpcodeToken | undefined)[] = new Array(256);
 const cbOpcodes: (OpcodeToken | undefined)[] = new Array(256);
 
 opcodes[0x00] = generateOpcodeToken('NOP', 1, 4);
+opcodes[0x0c] = generateOpcodeToken('INC C', 1, 1, {
+  Z: 'depends',
+  N: 'reset',
+  H: 'depends',
+});
 opcodes[0x0e] = generateOpcodeToken('LD C,${OPERAND}', 2, 8, undefined, 'd8');
 opcodes[0x11] = generateOpcodeToken('LD DE,${OPERAND}', 3, 12, undefined, 'd16');
 opcodes[0x13] = generateOpcodeToken('INC DE', 1, 8);
@@ -41,7 +46,7 @@ opcodes[0xaf] = generateOpcodeToken('XOR A', 1, 4, { Z: 'depends' });
 opcodes[0xcb] = generateOpcodeToken('PREFIX CB', 1, 4);
 opcodes[0xcd] = generateOpcodeToken('CALL ${OPERAND}', 3, 24, undefined, 'a16');
 opcodes[0xe0] = generateOpcodeToken('LD ($FF00+${OPERAND}),A', 2, 12, undefined, 'a8');
-opcodes[0xe2] = generateOpcodeToken('LD (C),A', 2, 8);
+opcodes[0xe2] = generateOpcodeToken('LD (C),A', 1, 8);
 opcodes[0xfe] = generateOpcodeToken(
   'CP ${OPERAND}',
   2,
