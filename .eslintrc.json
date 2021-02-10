@@ -21,6 +21,7 @@
     "react/jsx-curly-brace-presence": ["error", "never"],
 
     /* eslint basic rules */
+    "no-template-curly-in-string": "off",
     "no-unused-vars": "off",
     "padding-line-between-statements": [
       "error",
