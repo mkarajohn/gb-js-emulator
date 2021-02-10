@@ -13,7 +13,7 @@ function App() {
   return (
     <Fragment>
       <div className="screen-container">
-        <h2>GameBoy JS emulator</h2>
+        <h2>GameBoy emulator</h2>
         <canvas height={144} width={160} />
         {bootCode ? (
           <span>bootcode loaded</span>
