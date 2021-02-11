@@ -1,7 +1,6 @@
-import disassemble from './disassembler';
+import disassemble from 'disassembler';
 import { Fragment, useEffect, useState } from 'react';
 import bootcode from './bootcode';
-import { MEMORY } from './memory';
 
 const emptyBootcode = new Uint8Array(256);
 
@@ -167,7 +166,7 @@ function App() {
             <h2>Disassembled boot code</h2>
             <code>
               <pre>
-                {disassemble(bootCode).map((line) => {
+                {disassemble(bootCode, [[0x00a8, 0x00df]]).map((line) => {
                   return (
                     <Fragment key={line.position}>
                       <span>

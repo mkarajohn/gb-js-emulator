@@ -1,4 +1,5 @@
-import type { OperandTypes, OpcodeToken } from './types.d';
+import type { OperandTypes } from 'types.d';
+import type { OpcodeToken } from './types.d';
 
 function generateOpcodeToken(
   instruction: string,
@@ -11,6 +12,8 @@ function generateOpcodeToken(
     operand: operandType,
   };
 }
+
+//https://gekkio.fi/blog/2015/mooneye-gb-a-gameboy-emulator-written-in-rust/
 
 const opcodes: (OpcodeToken | undefined)[] = new Array(0x100);
 const cbOpcodes: (OpcodeToken | undefined)[] = new Array(0x100);
@@ -47,10 +50,14 @@ opcodes[0x4f] = generateOpcodeToken('SUB A,L', 1);
 opcodes[0x57] = generateOpcodeToken('LD D,A', 1);
 opcodes[0x67] = generateOpcodeToken('LD H,A', 1);
 opcodes[0x77] = generateOpcodeToken('LD (HL),A', 1);
+opcodes[0x78] = generateOpcodeToken('LD A,B', 1);
 opcodes[0x7b] = generateOpcodeToken('LD A,E', 1);
 opcodes[0x7c] = generateOpcodeToken('LD A,H', 1);
+opcodes[0x7d] = generateOpcodeToken('LD A,L', 1);
+opcodes[0x86] = generateOpcodeToken('ADD A,(HL)', 1);
 opcodes[0x90] = generateOpcodeToken('SUB A,B', 1);
 opcodes[0xaf] = generateOpcodeToken('XOR A', 1);
+opcodes[0xbe] = generateOpcodeToken('CP (HL)', 1);
 opcodes[0xc1] = generateOpcodeToken('POP BC', 1);
 opcodes[0xc5] = generateOpcodeToken('PUSH BC', 1);
 opcodes[0xc9] = generateOpcodeToken('RET', 1);

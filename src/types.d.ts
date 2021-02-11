@@ -14,6 +14,15 @@ export type Registers =
   | 'SP'
   | 'PC';
 
+// d8  means immediate 8 bit data
+// d16 means immediate 16 bit data
+// a8  means 8 bit unsigned data, which are added to $FF00 in certain instructions (replacement for missing IN and OUT instructions)
+// a16 means 16 bit address
+// r8  means 8 bit signed data, which are added to program counter
+export type OperandTypes = 'd8' | 'd16' | 'a8' | 'a16' | 'r8';
+
+export type MemoryAddress = `(${Registers | OperandTypes})`;
+
 export type FlagState = 'depends' | 'set' | 'reset';
 
 export type Flags = {
@@ -23,20 +32,23 @@ export type Flags = {
   C?: FlagState;
 };
 
-// d8  means immediate 8 bit data
-// d16 means immediate 16 bit data
-// a8  means 8 bit unsigned data, which are added to $FF00 in certain instructions (replacement for missing IN and OUT instructions)
-// a16 means 16 bit address
-// r8  means 8 bit signed data, which are added to program counter
-export type OperandTypes = 'd8' | 'd16' | 'a8' | 'a16' | 'r8';
+export type Operands = Registers | MemoryAddress | OperandTypes | null;
 
-export type OpcodeToken = {
+type OpcodeToken2 = {
   instruction: string;
   length: number;
-  operand: OperandTypes | null;
-};
-
-export type DisassembledInstructionToken = {
-  position: string;
-  code: string;
+  cycles:
+    | number
+    | {
+        high: number;
+        low: number;
+      };
+  flags: {
+    Z?: 'depends' | 'set' | 'reset';
+    N?: 'depends' | 'set' | 'reset';
+    H?: 'depends' | 'set' | 'reset';
+    C?: 'depends' | 'set' | 'reset';
+  };
+  source: Registers | MemoryAddress | OperandTypes;
+  destination: Registers | MemoryAddress | OperandTypes;
 };
