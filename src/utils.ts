@@ -20,3 +20,5 @@ export function zeroPad(n: number | string, paddedLength: number = 4) {
 
   return doPadding(paddedLength, numberAsHexString);
 }
+
+//https://gekkio.fi/blog/2015/mooneye-gb-a-gameboy-emulator-written-in-rust/
