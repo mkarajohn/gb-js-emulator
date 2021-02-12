@@ -138,4 +138,20 @@ window.INTERRUPT_ENABLE_FLAG = INTERRUPT_ENABLE_FLAG;
 //@ts-ignore
 window.MEMORY = MEMORY;
 
+function readMem(address: number) {
+  return MEMORY[address];
+}
+
+function writeMem(address, value) {
+  if (value > 0xff) {
+    const highByte = value & 0xff00;
+    const lowByte = value & 0x00ff;
+
+    MEMORY[address] = lowByte;
+    MEMORY[address + 1] = highByte;
+  } else {
+    MEMORY[address] = value;
+  }
+}
+
 export { MEMORY };
