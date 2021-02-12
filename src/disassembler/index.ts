@@ -1,6 +1,24 @@
+import { cbPrefixedOpcodes, opcodes } from 'opcodes';
+import type { OpcodeToken, Operands } from 'types.d';
 import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from 'utils';
-import { cbOpcodes, opcodes } from './opcodes';
-import type { DisassembledInstructionToken, OpcodeToken } from './types.d';
+import type { DisassembledInstructionToken } from './types.d';
+
+function replaceOperandTypeWithValue(operand: Operands, bytecode: Uint8Array, index: number) {
+  switch (operand) {
+    case 'a8':
+    case 'r8':
+    case 'd8':
+      return `$${zeroPad(convertNumberToHexString(bytecode[index + 1]), 2)}`;
+    case 'a16':
+    case 'd16':
+      return `$${zeroPad(convertNumberToHexString(bytecode[index + 2]), 2)}${zeroPad(
+        convertNumberToHexString(bytecode[index + 1]),
+        2
+      )}`;
+    default:
+      return operand;
+  }
+}
 
 function generateDisassembledInstructionToken(
   opcodeToken: OpcodeToken | undefined,
@@ -14,35 +32,25 @@ function generateDisassembledInstructionToken(
     };
   }
 
-  switch (opcodeToken.operand) {
-    case 'a8':
-    case 'r8':
-    case 'd8':
-      return {
-        position: `$${zeroPad(index, 4)}`,
-        code: opcodeToken.instruction.replace(
-          '${OPERAND}',
-          `$${zeroPad(convertNumberToHexString(bytecode[index + 1]), 2)}`
-        ),
-      };
-    case 'a16':
-    case 'd16':
-      return {
-        position: `$${zeroPad(index, 4)}`,
-        code: opcodeToken.instruction.replace(
-          '${OPERAND}',
-          `$${zeroPad(convertNumberToHexString(bytecode[index + 2]), 2)}${zeroPad(
-            convertNumberToHexString(bytecode[index + 1]),
-            2
-          )}`
-        ),
-      };
-    default:
-      return {
-        position: `$${zeroPad(index, 4)}`,
-        code: `${opcodeToken.instruction}`,
-      };
-  }
+  const { mnemonic, operands } = opcodeToken;
+  const code = operands.reduce(function (acc, operand, i) {
+    if (i === 0) {
+      acc = acc + ' ';
+    } else {
+      acc = acc + ',';
+    }
+
+    const formattedOperand =
+      replaceOperandTypeWithValue(operand.name, bytecode, index) +
+      (operand.increment ? '+' : operand.decrement ? '-' : '');
+
+    return acc + (operand.immediate ? formattedOperand : `(${formattedOperand})`);
+  }, `${mnemonic}`);
+
+  return {
+    position: `$${zeroPad(index, 4)}`,
+    code,
+  };
 }
 
 export default function disassemble(bytecode: Uint8Array, dataRanges: [number, number][]) {
@@ -72,22 +80,22 @@ export default function disassemble(bytecode: Uint8Array, dataRanges: [number, n
         i++;
       } else {
         switch (opcode) {
-          // opcode 0xcb references opcodes from the CB opcode table so it needs special handling
+          // opcode 0xcb references opcodesDEPRECATED from the CB opcode dictionary so it needs special handling
           case convertHexStringToDecimalNumber('0xcb'): {
-            const referencedObOpcodeToken = cbOpcodes[bytecode[i + opcodeToken.length]];
+            const referencedObOpcodeToken = cbPrefixedOpcodes[bytecode[i + opcodeToken.bytes]];
             disassembledCode.push(
               generateDisassembledInstructionToken(referencedObOpcodeToken, bytecode, i)
             );
             if (referencedObOpcodeToken) {
-              i += referencedObOpcodeToken.length;
+              i += referencedObOpcodeToken.bytes;
             } else {
-              i += opcodeToken.length;
+              i += opcodeToken.bytes;
             }
             break;
           }
           default:
             disassembledCode.push(generateDisassembledInstructionToken(opcodeToken, bytecode, i));
-            i += opcodeToken.length;
+            i += opcodeToken.bytes;
         }
       }
     }

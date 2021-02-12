@@ -1,4 +1,5 @@
 import disassemble from 'disassembler';
+import { MEMORY } from 'memory';
 import { Fragment, useEffect, useState } from 'react';
 import bootcode from './bootcode';
 
@@ -15,6 +16,8 @@ function App() {
 
   //@ts-ignore
   window.bootCode = bootCode;
+  //@ts-ignore
+  window.MEMORY = MEMORY;
 
   return (
     <Fragment>
@@ -171,7 +174,7 @@ function App() {
                     <Fragment key={line.position}>
                       <span>
                         <strong>{line.position}</strong>
-                        {'    '}
+                        {'  '}
                         {line.code}
                       </span>
                       <br />

@@ -29,6 +29,13 @@ const RESTART_AND_INTERRUPT_VECTORS = new Uint8Array(0x0100);
 const CARTRIDGE_HEADER_AREA = new Uint8Array(0x0150 - 0x0100);
 // 0x3fff - 0x0150
 const CARTRIDGE_ROM_BANK_0 = new Uint8Array(0x4000 - 0x0150);
+
+// Shortcut: ROM BANK 0
+// 0x3fff - 0x0000
+const ROM_BANK_0 = new Uint8Array(
+  RESTART_AND_INTERRUPT_VECTORS.length + CARTRIDGE_HEADER_AREA.length + CARTRIDGE_ROM_BANK_0.length
+);
+
 // 0x7fff - 0x4000
 const CARTRIDGE_ROM_SWITCHABLE_BANKS = new Uint8Array(0x8000 - 0x4000);
 
@@ -41,6 +48,12 @@ const CHARACTER_RAM = new Uint8Array(0x9800 - 0x8000);
 const BG_MAP_DATA_1 = new Uint8Array(0x9c00 - 0x9800);
 // 0x9fff - 0x9c00
 const BG_MAP_DATA_2 = new Uint8Array(0xa000 - 0x9c00);
+
+// Shortcut: VIDEO RAM
+// 0x8000 - 0x9fff
+const VIDEO_RAM = new Uint8Array(
+  CHARACTER_RAM.length + BG_MAP_DATA_1.length + BG_MAP_DATA_2.length
+);
 
 // 0xbfff - 0xa000
 const CARTRIDGE_RAM = new Uint8Array(0xc000 - 0xa000);
@@ -72,13 +85,9 @@ const ZERO_PAGE = new Uint8Array(0xffff - 0xff80);
 const INTERRUPT_ENABLE_FLAG = new Uint8Array(0x10000 - 0xffff);
 
 const MEMORY = new Uint8Array(
-  RESTART_AND_INTERRUPT_VECTORS.length +
-    CARTRIDGE_HEADER_AREA.length +
-    CARTRIDGE_ROM_BANK_0.length +
+  ROM_BANK_0.length +
     CARTRIDGE_ROM_SWITCHABLE_BANKS.length +
-    CHARACTER_RAM.length +
-    BG_MAP_DATA_1.length +
-    BG_MAP_DATA_2.length +
+    VIDEO_RAM.length +
     CARTRIDGE_RAM.length +
     INTERNAL_RAM_BANK_0.length +
     INTERNAL_RAM_BANK_1.length +
@@ -90,6 +99,42 @@ const MEMORY = new Uint8Array(
     INTERRUPT_ENABLE_FLAG.length
 );
 
+//@ts-ignore
+window.ROM_BANK_0 = ROM_BANK_0;
+//@ts-ignore
+window.VIDEO_RAM = VIDEO_RAM;
+//@ts-ignore
+window.RESTART_AND_INTERRUPT_VECTORS = RESTART_AND_INTERRUPT_VECTORS;
+//@ts-ignore
+window.CARTRIDGE_HEADER_AREA = CARTRIDGE_HEADER_AREA;
+//@ts-ignore
+window.CARTRIDGE_ROM_BANK_0 = CARTRIDGE_ROM_BANK_0;
+//@ts-ignore
+window.CARTRIDGE_ROM_SWITCHABLE_BANKS = CARTRIDGE_ROM_SWITCHABLE_BANKS;
+//@ts-ignore
+window.CHARACTER_RAM = CHARACTER_RAM;
+//@ts-ignore
+window.BG_MAP_DATA_1 = BG_MAP_DATA_1;
+//@ts-ignore
+window.BG_MAP_DATA_2 = BG_MAP_DATA_2;
+//@ts-ignore
+window.CARTRIDGE_RAM = CARTRIDGE_RAM;
+//@ts-ignore
+window.INTERNAL_RAM_BANK_0 = INTERNAL_RAM_BANK_0;
+//@ts-ignore
+window.INTERNAL_RAM_BANK_1 = INTERNAL_RAM_BANK_1;
+//@ts-ignore
+window.ECHO_RAM = ECHO_RAM;
+//@ts-ignore
+window.OBJECT_ATTRIBUTE_MEMORY = OBJECT_ATTRIBUTE_MEMORY;
+//@ts-ignore
+window.UNUSABLE_MEMORY = UNUSABLE_MEMORY;
+//@ts-ignore
+window.HARDWARE_IO_REGISTERS = HARDWARE_IO_REGISTERS;
+//@ts-ignore
+window.ZERO_PAGE = ZERO_PAGE;
+//@ts-ignore
+window.INTERRUPT_ENABLE_FLAG = INTERRUPT_ENABLE_FLAG;
 //@ts-ignore
 window.MEMORY = MEMORY;
 

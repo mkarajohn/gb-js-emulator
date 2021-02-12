@@ -21,34 +21,51 @@ export type Registers =
 // r8  means 8 bit signed data, which are added to program counter
 export type OperandTypes = 'd8' | 'd16' | 'a8' | 'a16' | 'r8';
 
-export type MemoryAddress = `(${Registers | OperandTypes})`;
-
-export type FlagState = 'depends' | 'set' | 'reset';
+export type FlagState = '-' | '0' | '1';
 
 export type Flags = {
-  Z?: FlagState;
-  N?: FlagState;
-  H?: FlagState;
-  C?: FlagState;
+  Z: 'Z' | FlagState;
+  N: 'N' | FlagState;
+  H: 'H' | FlagState;
+  C: 'C' | FlagState;
 };
 
-export type Operands = Registers | MemoryAddress | OperandTypes | null;
+export type Operands =
+  | Registers
+  | OperandTypes
+  | 'Ignored'
+  | 'Z'
+  | 'NZ'
+  | 'NC'
+  | '00H'
+  | '08H'
+  | '10H'
+  | '18H'
+  | '20H'
+  | '28H'
+  | '30H'
+  | '38H'
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7';
 
-type OpcodeToken2 = {
-  instruction: string;
-  length: number;
-  cycles:
-    | number
-    | {
-        high: number;
-        low: number;
-      };
-  flags: {
-    Z?: 'depends' | 'set' | 'reset';
-    N?: 'depends' | 'set' | 'reset';
-    H?: 'depends' | 'set' | 'reset';
-    C?: 'depends' | 'set' | 'reset';
-  };
-  source: Registers | MemoryAddress | OperandTypes;
-  destination: Registers | MemoryAddress | OperandTypes;
+type OpcodeToken = {
+  index: number;
+  mnemonic: string;
+  bytes: number;
+  cycles: number[];
+  operands: {
+    name: Operands;
+    immediate: boolean;
+    bytes?: number;
+    increment?: boolean;
+    decrement?: boolean;
+  }[];
+  immediate: boolean;
+  flags: Flags;
 };
