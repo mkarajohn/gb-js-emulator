@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     memory.set(bootcode);
 
-    while (registers[regPC] < 13) {
+    while (registers[regPC] < 20) {
       cpu();
     }
 
