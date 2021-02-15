@@ -19,7 +19,7 @@ const bootCode =
   /* 000000f0 */ 'f5 06 19 78 86 23 05 20 fb 86 20 fe 3e 01 e0 50';
 
 // The bootcode is 256 bytes, so that's how long the typed array should be
-const bootCodeUIntArr = new Uint8Array(256);
+const bootCodeUIntArr = new Uint8Array(0x100);
 
 // Each character couple is a byte in hex
 // Step is 3 to accommodate for the spaces, otherwise it would be 2

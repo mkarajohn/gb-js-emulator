@@ -1,4 +1,6 @@
-export type Registers =
+export type Register = number;
+
+export type RegisterNames =
   | 'A'
   | 'B'
   | 'C'
@@ -31,7 +33,7 @@ export type Flags = {
 };
 
 export type Operands =
-  | Registers
+  | RegisterNames
   | OperandTypes
   | 'Ignored'
   | 'Z'
@@ -45,14 +47,14 @@ export type Operands =
   | '28H'
   | '30H'
   | '38H'
-  | '0'
-  | '1'
-  | '2'
-  | '3'
-  | '4'
-  | '5'
-  | '6'
-  | '7';
+  | 0
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7;
 
 type OpcodeToken = {
   index: number;

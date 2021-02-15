@@ -1,23 +1,44 @@
+import { cpu } from 'cpu';
 import disassemble from 'disassembler';
-import { MEMORY } from 'memory';
+import { memory } from 'memory';
 import { Fragment, useEffect, useState } from 'react';
+import { registers, regPC } from 'registers';
 import bootcode from './bootcode';
 
 const emptyBootcode = new Uint8Array(256);
 
 function App() {
-  const [bootCode, setBootCode] = useState(emptyBootcode);
+  const [bootCode, setBootCode] = useState(bootcode);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setBootCode(bootcode);
+  //   }, 2000);
+  // }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      setBootCode(bootcode);
-    }, 2000);
+    memory.set(bootcode);
+
+    while (registers[regPC] < 13) {
+      cpu();
+    }
+
+    // let cont = true;
+    // while (cont) {
+    //   try {
+    //     const cycles = cpu();
+    //   } catch (e) {
+    //     cont = false;
+    //   }
+    // }
   }, []);
 
   //@ts-ignore
   window.bootCode = bootCode;
-  //@ts-ignore
-  window.MEMORY = MEMORY;
+
+  const disassembledCode = disassemble(bootCode, [[0x00a8, 0x00df]]);
+
+  // window.alert('adasd');
 
   return (
     <Fragment>
@@ -169,7 +190,7 @@ function App() {
             <h2>Disassembled boot code</h2>
             <code>
               <pre>
-                {disassemble(bootCode, [[0x00a8, 0x00df]]).map((line) => {
+                {disassembledCode.map((line) => {
                   return (
                     <Fragment key={line.position}>
                       <span>

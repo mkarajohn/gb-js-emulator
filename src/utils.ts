@@ -21,4 +21,8 @@ export function zeroPad(n: number | string, paddedLength: number = 4) {
   return doPadding(paddedLength, numberAsHexString);
 }
 
+export function signedOffset(value) {
+  return (value & 0x80) >> 7 === 1 ? value - 0x100 : value;
+}
+
 //https://gekkio.fi/blog/2015/mooneye-gb-a-gameboy-emulator-written-in-rust/

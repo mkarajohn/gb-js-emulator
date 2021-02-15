@@ -6552,7 +6552,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6575,7 +6575,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6598,7 +6598,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6621,7 +6621,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6644,7 +6644,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6667,7 +6667,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6690,7 +6690,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6713,7 +6713,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -6736,7 +6736,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6759,7 +6759,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6782,7 +6782,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6805,7 +6805,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6828,7 +6828,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6851,7 +6851,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6874,7 +6874,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6897,7 +6897,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -6920,7 +6920,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -6943,7 +6943,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -6966,7 +6966,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -6989,7 +6989,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -7012,7 +7012,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -7035,7 +7035,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -7058,7 +7058,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -7081,7 +7081,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -7104,7 +7104,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7127,7 +7127,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7150,7 +7150,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7173,7 +7173,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7196,7 +7196,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7219,7 +7219,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7242,7 +7242,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7265,7 +7265,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -7288,7 +7288,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7311,7 +7311,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7334,7 +7334,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7357,7 +7357,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7380,7 +7380,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7403,7 +7403,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7426,7 +7426,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7449,7 +7449,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -7472,7 +7472,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7495,7 +7495,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7518,7 +7518,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7541,7 +7541,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7564,7 +7564,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7587,7 +7587,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7610,7 +7610,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7633,7 +7633,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -7656,7 +7656,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7679,7 +7679,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7702,7 +7702,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7725,7 +7725,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7748,7 +7748,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7771,7 +7771,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7794,7 +7794,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7817,7 +7817,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -7840,7 +7840,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -7863,7 +7863,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -7886,7 +7886,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -7909,7 +7909,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -7932,7 +7932,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -7955,7 +7955,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -7978,7 +7978,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [12],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -8001,7 +8001,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -8024,7 +8024,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8047,7 +8047,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8070,7 +8070,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8093,7 +8093,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8116,7 +8116,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8139,7 +8139,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8162,7 +8162,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8185,7 +8185,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -8208,7 +8208,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8231,7 +8231,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8254,7 +8254,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8277,7 +8277,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8300,7 +8300,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8323,7 +8323,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8346,7 +8346,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8369,7 +8369,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -8392,7 +8392,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8415,7 +8415,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8438,7 +8438,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8461,7 +8461,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8484,7 +8484,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8507,7 +8507,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8530,7 +8530,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8553,7 +8553,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -8576,7 +8576,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8599,7 +8599,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8622,7 +8622,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8645,7 +8645,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8668,7 +8668,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8691,7 +8691,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8714,7 +8714,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8737,7 +8737,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -8760,7 +8760,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8783,7 +8783,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8806,7 +8806,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8829,7 +8829,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8852,7 +8852,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8875,7 +8875,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8898,7 +8898,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8921,7 +8921,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -8944,7 +8944,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -8967,7 +8967,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -8990,7 +8990,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -9013,7 +9013,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -9036,7 +9036,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -9059,7 +9059,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -9082,7 +9082,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -9105,7 +9105,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -9128,7 +9128,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9151,7 +9151,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9174,7 +9174,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9197,7 +9197,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9220,7 +9220,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9243,7 +9243,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9266,7 +9266,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9289,7 +9289,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -9312,7 +9312,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9335,7 +9335,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9358,7 +9358,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9381,7 +9381,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9404,7 +9404,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9427,7 +9427,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9450,7 +9450,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9473,7 +9473,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -9496,7 +9496,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9519,7 +9519,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9542,7 +9542,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9565,7 +9565,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9588,7 +9588,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9611,7 +9611,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9634,7 +9634,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9657,7 +9657,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '0',
+        name: 0,
         immediate: true,
       },
       {
@@ -9680,7 +9680,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9703,7 +9703,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9726,7 +9726,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9749,7 +9749,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9772,7 +9772,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9795,7 +9795,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9818,7 +9818,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9841,7 +9841,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '1',
+        name: 1,
         immediate: true,
       },
       {
@@ -9864,7 +9864,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -9887,7 +9887,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -9910,7 +9910,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -9933,7 +9933,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -9956,7 +9956,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -9979,7 +9979,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -10002,7 +10002,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -10025,7 +10025,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '2',
+        name: 2,
         immediate: true,
       },
       {
@@ -10048,7 +10048,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10071,7 +10071,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10094,7 +10094,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10117,7 +10117,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10140,7 +10140,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10163,7 +10163,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10186,7 +10186,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10209,7 +10209,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '3',
+        name: 3,
         immediate: true,
       },
       {
@@ -10232,7 +10232,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10255,7 +10255,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10278,7 +10278,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10301,7 +10301,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10324,7 +10324,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10347,7 +10347,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10370,7 +10370,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10393,7 +10393,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '4',
+        name: 4,
         immediate: true,
       },
       {
@@ -10416,7 +10416,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10439,7 +10439,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10462,7 +10462,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10485,7 +10485,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10508,7 +10508,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10531,7 +10531,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10554,7 +10554,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10577,7 +10577,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '5',
+        name: 5,
         immediate: true,
       },
       {
@@ -10600,7 +10600,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10623,7 +10623,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10646,7 +10646,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10669,7 +10669,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10692,7 +10692,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10715,7 +10715,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10738,7 +10738,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10761,7 +10761,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '6',
+        name: 6,
         immediate: true,
       },
       {
@@ -10784,7 +10784,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10807,7 +10807,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10830,7 +10830,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10853,7 +10853,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10876,7 +10876,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10899,7 +10899,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10922,7 +10922,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [16],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
@@ -10945,7 +10945,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     cycles: [8],
     operands: [
       {
-        name: '7',
+        name: 7,
         immediate: true,
       },
       {
