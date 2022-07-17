@@ -6,8 +6,8 @@ export const regE = 'E';
 export const regF = 'F';
 export const regH = 'H';
 export const regL = 'L';
-export const regSP = 'SP';
-export const regPC = 'PC';
+export const regSP = 'SP'; // Stack Pointer
+export const regPC = 'PC'; // Program Counter
 
 export const regAF = 'AF';
 export const regBC = 'BC';

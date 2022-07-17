@@ -17,12 +17,12 @@ import {
   setRegisterValue,
 } from 'registers';
 import { OpcodeToken } from 'types';
-import { signedOffset } from 'utils';
+import { convertNumberToHexString, signedOffset } from 'utils';
 
 let index = 0;
 
 function logInstruction(name, opcodeToken) {
-  // console.log(index + ': ' + convertNumberToHexString(opcodeToken.index) + ' ' + name, opcodeToken);
+  console.log(index + ': ' + convertNumberToHexString(opcodeToken.index) + ' ' + name, opcodeToken);
   index++;
 }
 

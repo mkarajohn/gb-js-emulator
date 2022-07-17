@@ -8,19 +8,19 @@ import bootcode from './bootcode';
 const emptyBootcode = new Uint8Array(256);
 
 function App() {
-  const [bootCode, setBootCode] = useState(bootcode);
+  const [bootCode, setBootCode] = useState(emptyBootcode);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setBootCode(bootcode);
-  //   }, 2000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setBootCode(bootcode);
+    }, 500);
+  }, []);
 
   useEffect(() => {
     memory.set(bootcode);
 
     while (registers[regPC] < 20) {
-      cpu();
+      cpu.run();
     }
 
     // let cont = true;
