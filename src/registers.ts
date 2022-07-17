@@ -14,17 +14,17 @@ export const regBC = 'BC';
 export const regDE = 'DE';
 export const regHL = 'HL';
 
-export const registers = {
-  [regA]: 0x00000000,
-  [regB]: 0x00000000,
-  [regC]: 0x00000000,
-  [regD]: 0x00000000,
-  [regE]: 0x00000000,
-  [regF]: 0x00000000,
-  [regH]: 0x00000000,
-  [regL]: 0x00000000,
-  [regSP]: 0x0000000000000000,
-  [regPC]: 0x0000000000000000,
+const registers = {
+  [regA]: 0x01,
+  [regB]: 0x00,
+  [regC]: 0x13,
+  [regD]: 0x00,
+  [regE]: 0xd8,
+  [regF]: 0xb0,
+  [regH]: 0x01,
+  [regL]: 0x4d,
+  [regSP]: 0xfffe,
+  [regPC]: 0x00,
 };
 
 function setRegisterPairValue(registerPair, value) {

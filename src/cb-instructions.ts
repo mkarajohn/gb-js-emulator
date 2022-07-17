@@ -1,5 +1,5 @@
-import { readMem } from 'memory';
-import { cbPrefixedOpcodes, opcodes } from 'opcodes';
+import { cbPrefixedOpcodes, instructionSet } from 'instruction-set';
+import { readMemAddr } from 'memory';
 import {
   getRegisterValue,
   regA,
@@ -13,24 +13,24 @@ import {
   regPC,
   setRegisterValue,
 } from 'registers';
-import { OpcodeToken } from 'types';
+import { InstructionToken } from 'types';
 
 let index = 0;
 
-function logInstruction(name, opcodeToken) {
-  // console.log(index + ': ' + convertNumberToHexString(opcodeToken.index) + ' ' + name, opcodeToken);
+function logInstruction(name, instructionToken) {
+  // console.log(index + ': ' + convertNumberToHexString(instructionToken.index) + ' ' + name, instructionToken);
   index++;
 }
 
 function nop() {
-  logInstruction('NOP', opcodes[0x00]);
+  logInstruction('NOP', instructionSet[0x00]);
   setRegisterValue(regPC, getRegisterValue(regPC) + 1);
 
   return 4;
 }
 
-function bit(opcodeToken: OpcodeToken) {
-  const { operands, cycles, bytes } = opcodeToken;
+function bit(instructionToken: InstructionToken) {
+  const { operands, cycles, bytes } = instructionToken;
   const [bit, register] = operands;
 
   const checkBit = 1 << (bit.name as number);
@@ -56,7 +56,7 @@ function bit(opcodeToken: OpcodeToken) {
     case regH:
     case regL:
       return function () {
-        logInstruction('BIT', opcodeToken);
+        logInstruction('BIT', instructionToken);
         const registerValue = getRegisterValue(register.name);
 
         // update Z flag, reset flag N, set flag H
@@ -70,8 +70,8 @@ function bit(opcodeToken: OpcodeToken) {
     default:
       // register HL
       return function () {
-        logInstruction('BIT', opcodeToken);
-        const registerValue = readMem(getRegisterValue(register.name));
+        logInstruction('BIT', instructionToken);
+        const registerValue = readMemAddr(getRegisterValue(register.name));
 
         // update Z flag, reset flag N, set flag H
         setRegisterValue(regF, setFlags(registerValue));

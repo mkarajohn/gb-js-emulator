@@ -56,8 +56,8 @@ export type Operands =
   | 6
   | 7;
 
-type OpcodeToken = {
-  index: number;
+type InstructionToken = {
+  opcode: number;
   mnemonic: string;
   bytes: number;
   cycles: number[];

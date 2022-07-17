@@ -1,5 +1,5 @@
-import { cbPrefixedOpcodes, opcodes } from 'opcodes';
-import type { OpcodeToken, Operands } from 'types.d';
+import { cbPrefixedOpcodes, instructionSet } from 'instruction-set';
+import type { InstructionToken, Operands } from 'types.d';
 import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from 'utils';
 import type { DisassembledInstructionToken } from './types.d';
 
@@ -21,18 +21,18 @@ function replaceOperandTypeWithValue(operand: Operands, bytecode: Uint8Array, in
 }
 
 function generateDisassembledInstructionToken(
-  opcodeToken: OpcodeToken | undefined,
+  instructionToken: InstructionToken | undefined,
   bytecode: Uint8Array,
   index: number
 ): DisassembledInstructionToken {
-  if (!opcodeToken) {
+  if (!instructionToken) {
     return {
       position: `$${zeroPad(index, 4)}`,
       code: `Unknown opcode`,
     };
   }
 
-  const { mnemonic, operands } = opcodeToken;
+  const { mnemonic, operands } = instructionToken;
   const code = operands.reduce(function (acc, operand, i) {
     if (i === 0) {
       acc = acc + ' ';
@@ -73,29 +73,31 @@ export default function disassemble(bytecode: Uint8Array, dataRanges: [number, n
       });
       i++;
     } else {
-      const opcodeToken = opcodes[opcode];
+      const instructionToken = instructionSet[opcode];
 
-      if (!opcodeToken) {
-        disassembledCode.push(generateDisassembledInstructionToken(opcodeToken, bytecode, i));
+      if (!instructionToken) {
+        disassembledCode.push(generateDisassembledInstructionToken(instructionToken, bytecode, i));
         i++;
       } else {
         switch (opcode) {
           // opcode 0xcb references opcodesDEPRECATED from the CB opcode dictionary so it needs special handling
           case convertHexStringToDecimalNumber('0xcb'): {
-            const referencedObOpcodeToken = cbPrefixedOpcodes[bytecode[i + opcodeToken.bytes]];
+            const referencedObOpcodeToken = cbPrefixedOpcodes[bytecode[i + instructionToken.bytes]];
             disassembledCode.push(
               generateDisassembledInstructionToken(referencedObOpcodeToken, bytecode, i)
             );
             if (referencedObOpcodeToken) {
               i += referencedObOpcodeToken.bytes;
             } else {
-              i += opcodeToken.bytes;
+              i += instructionToken.bytes;
             }
             break;
           }
           default:
-            disassembledCode.push(generateDisassembledInstructionToken(opcodeToken, bytecode, i));
-            i += opcodeToken.bytes;
+            disassembledCode.push(
+              generateDisassembledInstructionToken(instructionToken, bytecode, i)
+            );
+            i += instructionToken.bytes;
         }
       }
     }

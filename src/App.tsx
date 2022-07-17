@@ -1,52 +1,39 @@
+import { enableBootROM, readBootROM } from 'bootROM';
 import { cpu } from 'cpu';
 import disassemble from 'disassembler';
-import { memory } from 'memory';
+import { loadToMem } from 'memory';
 import { Fragment, useEffect, useState } from 'react';
-import { registers, regPC } from 'registers';
-import bootcode from './bootcode';
 
 const emptyBootcode = new Uint8Array(256);
+const bootCode = readBootROM();
 
 function App() {
-  const [bootCode, setBootCode] = useState(emptyBootcode);
+  const [loadedBootCode, setLoadedBootCode] = useState(emptyBootcode);
 
   useEffect(() => {
     setTimeout(() => {
-      setBootCode(bootcode);
+      setLoadedBootCode(bootCode);
     }, 500);
   }, []);
 
   useEffect(() => {
-    memory.set(bootcode);
-
-    while (registers[regPC] < 20) {
-      cpu.run();
-    }
-
-    // let cont = true;
-    // while (cont) {
-    //   try {
-    //     const cycles = cpu();
-    //   } catch (e) {
-    //     cont = false;
-    //   }
-    // }
+    enableBootROM();
+    loadToMem(bootCode);
+    cpu.run();
   }, []);
 
   //@ts-ignore
   window.bootCode = bootCode;
 
-  const disassembledCode = disassemble(bootCode, [[0x00a8, 0x00df]]);
-
-  // window.alert('adasd');
+  const disassembledCode = disassemble(loadedBootCode, [[0x00a8, 0x00df]]);
 
   return (
     <Fragment>
       <div className="screen-container">
         <h2>GameBoy emulator</h2>
         <canvas height={144} width={160} />
-        {bootCode ? (
-          <span>{bootCode === emptyBootcode ? 'loading bootcode' : 'bootcode loaded'}</span>
+        {loadedBootCode ? (
+          <span>{loadedBootCode === emptyBootcode ? 'loading bootcode' : 'bootcode loaded'}</span>
         ) : (
           <Fragment>
             <span>drop the bootcode here</span>
@@ -70,12 +57,12 @@ function App() {
           </Fragment>
         )}
       </div>
-      {bootCode ? (
+      {loadedBootCode ? (
         <Fragment>
           <div className="bootcode-container">
             <h2>Boot code</h2>
             <code>
-              {bootCode === emptyBootcode ? (
+              {loadedBootCode === emptyBootcode ? (
                 <pre>
                   <strong>{'       x0 x1 x2 x3 x4 x5 x6 x7  x8 x9 xa xb xc xd xe xf'}</strong>
                   <br />
