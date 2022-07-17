@@ -1,8 +1,8 @@
-import { OpcodeToken } from 'types';
+import { InstructionToken } from 'types';
 
-export const opcodes: OpcodeToken[] = [
+export const instructionSet: InstructionToken[] = [
   {
-    index: 0x00,
+    opcode: 0x00,
     mnemonic: 'NOP',
     bytes: 1,
     cycles: [4],
@@ -16,7 +16,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x01,
+    opcode: 0x01,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [12],
@@ -40,7 +40,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x02,
+    opcode: 0x02,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -63,7 +63,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x03,
+    opcode: 0x03,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [8],
@@ -82,7 +82,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x04,
+    opcode: 0x04,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -101,7 +101,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x05,
+    opcode: 0x05,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -120,7 +120,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x06,
+    opcode: 0x06,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -144,7 +144,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x07,
+    opcode: 0x07,
     mnemonic: 'RLCA',
     bytes: 1,
     cycles: [4],
@@ -158,7 +158,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x08,
+    opcode: 0x08,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [20],
@@ -182,7 +182,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x09,
+    opcode: 0x09,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [8],
@@ -205,7 +205,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0a,
+    opcode: 0x0a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -228,7 +228,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0b,
+    opcode: 0x0b,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [8],
@@ -247,7 +247,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0c,
+    opcode: 0x0c,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -266,7 +266,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0d,
+    opcode: 0x0d,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -285,7 +285,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0e,
+    opcode: 0x0e,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -309,7 +309,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0f,
+    opcode: 0x0f,
     mnemonic: 'RRCA',
     bytes: 1,
     cycles: [4],
@@ -323,7 +323,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x10,
+    opcode: 0x10,
     mnemonic: 'STOP',
     bytes: 2,
     cycles: [4],
@@ -343,7 +343,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x11,
+    opcode: 0x11,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [12],
@@ -367,7 +367,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x12,
+    opcode: 0x12,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -390,7 +390,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x13,
+    opcode: 0x13,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [8],
@@ -409,7 +409,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x14,
+    opcode: 0x14,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -428,7 +428,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x15,
+    opcode: 0x15,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -447,7 +447,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x16,
+    opcode: 0x16,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -471,7 +471,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x17,
+    opcode: 0x17,
     mnemonic: 'RLA',
     bytes: 1,
     cycles: [4],
@@ -485,7 +485,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x18,
+    opcode: 0x18,
     mnemonic: 'JR',
     bytes: 2,
     cycles: [12],
@@ -505,7 +505,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x19,
+    opcode: 0x19,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [8],
@@ -528,7 +528,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1a,
+    opcode: 0x1a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -551,7 +551,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1b,
+    opcode: 0x1b,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [8],
@@ -570,7 +570,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1c,
+    opcode: 0x1c,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -589,7 +589,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1d,
+    opcode: 0x1d,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -608,7 +608,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1e,
+    opcode: 0x1e,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -632,7 +632,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1f,
+    opcode: 0x1f,
     mnemonic: 'RRA',
     bytes: 1,
     cycles: [4],
@@ -646,7 +646,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x20,
+    opcode: 0x20,
     mnemonic: 'JR',
     bytes: 2,
     cycles: [12, 8],
@@ -670,7 +670,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x21,
+    opcode: 0x21,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [12],
@@ -694,7 +694,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x22,
+    opcode: 0x22,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -718,7 +718,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x23,
+    opcode: 0x23,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [8],
@@ -737,7 +737,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x24,
+    opcode: 0x24,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -756,7 +756,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x25,
+    opcode: 0x25,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -775,7 +775,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x26,
+    opcode: 0x26,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -799,7 +799,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x27,
+    opcode: 0x27,
     mnemonic: 'DAA',
     bytes: 1,
     cycles: [4],
@@ -813,7 +813,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x28,
+    opcode: 0x28,
     mnemonic: 'JR',
     bytes: 2,
     cycles: [12, 8],
@@ -837,7 +837,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x29,
+    opcode: 0x29,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [8],
@@ -860,7 +860,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2a,
+    opcode: 0x2a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -884,7 +884,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2b,
+    opcode: 0x2b,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [8],
@@ -903,7 +903,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2c,
+    opcode: 0x2c,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -922,7 +922,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2d,
+    opcode: 0x2d,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -941,7 +941,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2e,
+    opcode: 0x2e,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -965,7 +965,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2f,
+    opcode: 0x2f,
     mnemonic: 'CPL',
     bytes: 1,
     cycles: [4],
@@ -979,7 +979,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x30,
+    opcode: 0x30,
     mnemonic: 'JR',
     bytes: 2,
     cycles: [12, 8],
@@ -1003,7 +1003,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x31,
+    opcode: 0x31,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [12],
@@ -1027,7 +1027,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x32,
+    opcode: 0x32,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -1051,7 +1051,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x33,
+    opcode: 0x33,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [8],
@@ -1070,7 +1070,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x34,
+    opcode: 0x34,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [12],
@@ -1089,7 +1089,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x35,
+    opcode: 0x35,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [12],
@@ -1108,7 +1108,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x36,
+    opcode: 0x36,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [12],
@@ -1132,7 +1132,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x37,
+    opcode: 0x37,
     mnemonic: 'SCF',
     bytes: 1,
     cycles: [4],
@@ -1146,7 +1146,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x38,
+    opcode: 0x38,
     mnemonic: 'JR',
     bytes: 2,
     cycles: [12, 8],
@@ -1170,7 +1170,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x39,
+    opcode: 0x39,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [8],
@@ -1193,7 +1193,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3a,
+    opcode: 0x3a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -1217,7 +1217,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3b,
+    opcode: 0x3b,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [8],
@@ -1236,7 +1236,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3c,
+    opcode: 0x3c,
     mnemonic: 'INC',
     bytes: 1,
     cycles: [4],
@@ -1255,7 +1255,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3d,
+    opcode: 0x3d,
     mnemonic: 'DEC',
     bytes: 1,
     cycles: [4],
@@ -1274,7 +1274,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3e,
+    opcode: 0x3e,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [8],
@@ -1298,7 +1298,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3f,
+    opcode: 0x3f,
     mnemonic: 'CCF',
     bytes: 1,
     cycles: [4],
@@ -1312,7 +1312,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x40,
+    opcode: 0x40,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1335,7 +1335,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x41,
+    opcode: 0x41,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1358,7 +1358,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x42,
+    opcode: 0x42,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1381,7 +1381,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x43,
+    opcode: 0x43,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1404,7 +1404,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x44,
+    opcode: 0x44,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1427,7 +1427,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x45,
+    opcode: 0x45,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1450,7 +1450,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x46,
+    opcode: 0x46,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -1473,7 +1473,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x47,
+    opcode: 0x47,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1496,7 +1496,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x48,
+    opcode: 0x48,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1519,7 +1519,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x49,
+    opcode: 0x49,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1542,7 +1542,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4a,
+    opcode: 0x4a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1565,7 +1565,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4b,
+    opcode: 0x4b,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1588,7 +1588,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4c,
+    opcode: 0x4c,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1611,7 +1611,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4d,
+    opcode: 0x4d,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1634,7 +1634,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4e,
+    opcode: 0x4e,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -1657,7 +1657,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4f,
+    opcode: 0x4f,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1680,7 +1680,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x50,
+    opcode: 0x50,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1703,7 +1703,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x51,
+    opcode: 0x51,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1726,7 +1726,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x52,
+    opcode: 0x52,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1749,7 +1749,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x53,
+    opcode: 0x53,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1772,7 +1772,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x54,
+    opcode: 0x54,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1795,7 +1795,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x55,
+    opcode: 0x55,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1818,7 +1818,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x56,
+    opcode: 0x56,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -1841,7 +1841,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x57,
+    opcode: 0x57,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1864,7 +1864,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x58,
+    opcode: 0x58,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1887,7 +1887,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x59,
+    opcode: 0x59,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1910,7 +1910,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5a,
+    opcode: 0x5a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1933,7 +1933,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5b,
+    opcode: 0x5b,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1956,7 +1956,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5c,
+    opcode: 0x5c,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -1979,7 +1979,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5d,
+    opcode: 0x5d,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2002,7 +2002,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5e,
+    opcode: 0x5e,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2025,7 +2025,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5f,
+    opcode: 0x5f,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2048,7 +2048,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x60,
+    opcode: 0x60,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2071,7 +2071,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x61,
+    opcode: 0x61,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2094,7 +2094,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x62,
+    opcode: 0x62,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2117,7 +2117,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x63,
+    opcode: 0x63,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2140,7 +2140,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x64,
+    opcode: 0x64,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2163,7 +2163,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x65,
+    opcode: 0x65,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2186,7 +2186,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x66,
+    opcode: 0x66,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2209,7 +2209,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x67,
+    opcode: 0x67,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2232,7 +2232,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x68,
+    opcode: 0x68,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2255,7 +2255,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x69,
+    opcode: 0x69,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2278,7 +2278,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6a,
+    opcode: 0x6a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2301,7 +2301,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6b,
+    opcode: 0x6b,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2324,7 +2324,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6c,
+    opcode: 0x6c,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2347,7 +2347,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6d,
+    opcode: 0x6d,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2370,7 +2370,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6e,
+    opcode: 0x6e,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2393,7 +2393,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6f,
+    opcode: 0x6f,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2416,7 +2416,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x70,
+    opcode: 0x70,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2439,7 +2439,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x71,
+    opcode: 0x71,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2462,7 +2462,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x72,
+    opcode: 0x72,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2485,7 +2485,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x73,
+    opcode: 0x73,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2508,7 +2508,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x74,
+    opcode: 0x74,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2531,7 +2531,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x75,
+    opcode: 0x75,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2554,7 +2554,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x76,
+    opcode: 0x76,
     mnemonic: 'HALT',
     bytes: 1,
     cycles: [4],
@@ -2568,7 +2568,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x77,
+    opcode: 0x77,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2591,7 +2591,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x78,
+    opcode: 0x78,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2614,7 +2614,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x79,
+    opcode: 0x79,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2637,7 +2637,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7a,
+    opcode: 0x7a,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2660,7 +2660,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7b,
+    opcode: 0x7b,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2683,7 +2683,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7c,
+    opcode: 0x7c,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2706,7 +2706,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7d,
+    opcode: 0x7d,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2729,7 +2729,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7e,
+    opcode: 0x7e,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -2752,7 +2752,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7f,
+    opcode: 0x7f,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [4],
@@ -2775,7 +2775,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x80,
+    opcode: 0x80,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2798,7 +2798,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x81,
+    opcode: 0x81,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2821,7 +2821,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x82,
+    opcode: 0x82,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2844,7 +2844,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x83,
+    opcode: 0x83,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2867,7 +2867,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x84,
+    opcode: 0x84,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2890,7 +2890,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x85,
+    opcode: 0x85,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2913,7 +2913,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x86,
+    opcode: 0x86,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [8],
@@ -2936,7 +2936,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x87,
+    opcode: 0x87,
     mnemonic: 'ADD',
     bytes: 1,
     cycles: [4],
@@ -2959,7 +2959,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x88,
+    opcode: 0x88,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -2982,7 +2982,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x89,
+    opcode: 0x89,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -3005,7 +3005,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8a,
+    opcode: 0x8a,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -3028,7 +3028,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8b,
+    opcode: 0x8b,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -3051,7 +3051,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8c,
+    opcode: 0x8c,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -3074,7 +3074,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8d,
+    opcode: 0x8d,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -3097,7 +3097,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8e,
+    opcode: 0x8e,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [8],
@@ -3120,7 +3120,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8f,
+    opcode: 0x8f,
     mnemonic: 'ADC',
     bytes: 1,
     cycles: [4],
@@ -3143,7 +3143,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x90,
+    opcode: 0x90,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3162,7 +3162,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x91,
+    opcode: 0x91,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3181,7 +3181,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x92,
+    opcode: 0x92,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3200,7 +3200,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x93,
+    opcode: 0x93,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3219,7 +3219,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x94,
+    opcode: 0x94,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3238,7 +3238,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x95,
+    opcode: 0x95,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3257,7 +3257,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x96,
+    opcode: 0x96,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [8],
@@ -3276,7 +3276,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x97,
+    opcode: 0x97,
     mnemonic: 'SUB',
     bytes: 1,
     cycles: [4],
@@ -3295,7 +3295,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x98,
+    opcode: 0x98,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3318,7 +3318,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x99,
+    opcode: 0x99,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3341,7 +3341,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9a,
+    opcode: 0x9a,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3364,7 +3364,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9b,
+    opcode: 0x9b,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3387,7 +3387,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9c,
+    opcode: 0x9c,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3410,7 +3410,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9d,
+    opcode: 0x9d,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3433,7 +3433,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9e,
+    opcode: 0x9e,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [8],
@@ -3456,7 +3456,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9f,
+    opcode: 0x9f,
     mnemonic: 'SBC',
     bytes: 1,
     cycles: [4],
@@ -3479,7 +3479,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa0,
+    opcode: 0xa0,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3498,7 +3498,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa1,
+    opcode: 0xa1,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3517,7 +3517,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa2,
+    opcode: 0xa2,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3536,7 +3536,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa3,
+    opcode: 0xa3,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3555,7 +3555,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa4,
+    opcode: 0xa4,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3574,7 +3574,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa5,
+    opcode: 0xa5,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3593,7 +3593,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa6,
+    opcode: 0xa6,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [8],
@@ -3612,7 +3612,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa7,
+    opcode: 0xa7,
     mnemonic: 'AND',
     bytes: 1,
     cycles: [4],
@@ -3631,7 +3631,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa8,
+    opcode: 0xa8,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3650,7 +3650,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa9,
+    opcode: 0xa9,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3669,7 +3669,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xaa,
+    opcode: 0xaa,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3688,7 +3688,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xab,
+    opcode: 0xab,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3707,7 +3707,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xac,
+    opcode: 0xac,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3726,7 +3726,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xad,
+    opcode: 0xad,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3745,7 +3745,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xae,
+    opcode: 0xae,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [8],
@@ -3764,7 +3764,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xaf,
+    opcode: 0xaf,
     mnemonic: 'XOR',
     bytes: 1,
     cycles: [4],
@@ -3783,7 +3783,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb0,
+    opcode: 0xb0,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3802,7 +3802,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb1,
+    opcode: 0xb1,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3821,7 +3821,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb2,
+    opcode: 0xb2,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3840,7 +3840,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb3,
+    opcode: 0xb3,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3859,7 +3859,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb4,
+    opcode: 0xb4,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3878,7 +3878,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb5,
+    opcode: 0xb5,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3897,7 +3897,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb6,
+    opcode: 0xb6,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [8],
@@ -3916,7 +3916,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb7,
+    opcode: 0xb7,
     mnemonic: 'OR',
     bytes: 1,
     cycles: [4],
@@ -3935,7 +3935,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb8,
+    opcode: 0xb8,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -3954,7 +3954,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb9,
+    opcode: 0xb9,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -3973,7 +3973,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xba,
+    opcode: 0xba,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -3992,7 +3992,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbb,
+    opcode: 0xbb,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -4011,7 +4011,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbc,
+    opcode: 0xbc,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -4030,7 +4030,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbd,
+    opcode: 0xbd,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -4049,7 +4049,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbe,
+    opcode: 0xbe,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [8],
@@ -4068,7 +4068,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbf,
+    opcode: 0xbf,
     mnemonic: 'CP',
     bytes: 1,
     cycles: [4],
@@ -4087,7 +4087,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc0,
+    opcode: 0xc0,
     mnemonic: 'RET',
     bytes: 1,
     cycles: [20, 8],
@@ -4106,7 +4106,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc1,
+    opcode: 0xc1,
     mnemonic: 'POP',
     bytes: 1,
     cycles: [12],
@@ -4125,7 +4125,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc2,
+    opcode: 0xc2,
     mnemonic: 'JP',
     bytes: 3,
     cycles: [16, 12],
@@ -4149,7 +4149,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc3,
+    opcode: 0xc3,
     mnemonic: 'JP',
     bytes: 3,
     cycles: [16],
@@ -4169,7 +4169,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc4,
+    opcode: 0xc4,
     mnemonic: 'CALL',
     bytes: 3,
     cycles: [24, 12],
@@ -4193,7 +4193,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc5,
+    opcode: 0xc5,
     mnemonic: 'PUSH',
     bytes: 1,
     cycles: [16],
@@ -4212,7 +4212,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc6,
+    opcode: 0xc6,
     mnemonic: 'ADD',
     bytes: 2,
     cycles: [8],
@@ -4236,7 +4236,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc7,
+    opcode: 0xc7,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -4255,7 +4255,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc8,
+    opcode: 0xc8,
     mnemonic: 'RET',
     bytes: 1,
     cycles: [20, 8],
@@ -4274,7 +4274,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc9,
+    opcode: 0xc9,
     mnemonic: 'RET',
     bytes: 1,
     cycles: [16],
@@ -4288,7 +4288,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xca,
+    opcode: 0xca,
     mnemonic: 'JP',
     bytes: 3,
     cycles: [16, 12],
@@ -4312,7 +4312,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcb,
+    opcode: 0xcb,
     mnemonic: 'PREFIX',
     bytes: 1,
     cycles: [4],
@@ -4326,7 +4326,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcc,
+    opcode: 0xcc,
     mnemonic: 'CALL',
     bytes: 3,
     cycles: [24, 12],
@@ -4350,7 +4350,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcd,
+    opcode: 0xcd,
     mnemonic: 'CALL',
     bytes: 3,
     cycles: [24],
@@ -4370,7 +4370,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xce,
+    opcode: 0xce,
     mnemonic: 'ADC',
     bytes: 2,
     cycles: [8],
@@ -4394,7 +4394,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcf,
+    opcode: 0xcf,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -4413,7 +4413,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd0,
+    opcode: 0xd0,
     mnemonic: 'RET',
     bytes: 1,
     cycles: [20, 8],
@@ -4432,7 +4432,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd1,
+    opcode: 0xd1,
     mnemonic: 'POP',
     bytes: 1,
     cycles: [12],
@@ -4451,7 +4451,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd2,
+    opcode: 0xd2,
     mnemonic: 'JP',
     bytes: 3,
     cycles: [16, 12],
@@ -4475,7 +4475,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd3,
+    opcode: 0xd3,
     mnemonic: 'ILLEGAL_D3',
     bytes: 1,
     cycles: [4],
@@ -4489,7 +4489,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd4,
+    opcode: 0xd4,
     mnemonic: 'CALL',
     bytes: 3,
     cycles: [24, 12],
@@ -4513,7 +4513,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd5,
+    opcode: 0xd5,
     mnemonic: 'PUSH',
     bytes: 1,
     cycles: [16],
@@ -4532,7 +4532,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd6,
+    opcode: 0xd6,
     mnemonic: 'SUB',
     bytes: 2,
     cycles: [8],
@@ -4552,7 +4552,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd7,
+    opcode: 0xd7,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -4571,7 +4571,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd8,
+    opcode: 0xd8,
     mnemonic: 'RET',
     bytes: 1,
     cycles: [20, 8],
@@ -4590,7 +4590,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd9,
+    opcode: 0xd9,
     mnemonic: 'RETI',
     bytes: 1,
     cycles: [16],
@@ -4604,7 +4604,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xda,
+    opcode: 0xda,
     mnemonic: 'JP',
     bytes: 3,
     cycles: [16, 12],
@@ -4628,7 +4628,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdb,
+    opcode: 0xdb,
     mnemonic: 'ILLEGAL_DB',
     bytes: 1,
     cycles: [4],
@@ -4642,7 +4642,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdc,
+    opcode: 0xdc,
     mnemonic: 'CALL',
     bytes: 3,
     cycles: [24, 12],
@@ -4666,7 +4666,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdd,
+    opcode: 0xdd,
     mnemonic: 'ILLEGAL_DD',
     bytes: 1,
     cycles: [4],
@@ -4680,7 +4680,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xde,
+    opcode: 0xde,
     mnemonic: 'SBC',
     bytes: 2,
     cycles: [8],
@@ -4704,7 +4704,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdf,
+    opcode: 0xdf,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -4723,7 +4723,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe0,
+    opcode: 0xe0,
     mnemonic: 'LDH',
     bytes: 2,
     cycles: [12],
@@ -4747,7 +4747,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe1,
+    opcode: 0xe1,
     mnemonic: 'POP',
     bytes: 1,
     cycles: [12],
@@ -4766,7 +4766,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe2,
+    opcode: 0xe2,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -4789,7 +4789,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe3,
+    opcode: 0xe3,
     mnemonic: 'ILLEGAL_E3',
     bytes: 1,
     cycles: [4],
@@ -4803,7 +4803,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe4,
+    opcode: 0xe4,
     mnemonic: 'ILLEGAL_E4',
     bytes: 1,
     cycles: [4],
@@ -4817,7 +4817,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe5,
+    opcode: 0xe5,
     mnemonic: 'PUSH',
     bytes: 1,
     cycles: [16],
@@ -4836,7 +4836,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe6,
+    opcode: 0xe6,
     mnemonic: 'AND',
     bytes: 2,
     cycles: [8],
@@ -4856,7 +4856,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe7,
+    opcode: 0xe7,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -4875,7 +4875,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe8,
+    opcode: 0xe8,
     mnemonic: 'ADD',
     bytes: 2,
     cycles: [16],
@@ -4899,7 +4899,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe9,
+    opcode: 0xe9,
     mnemonic: 'JP',
     bytes: 1,
     cycles: [4],
@@ -4918,7 +4918,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xea,
+    opcode: 0xea,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [16],
@@ -4942,7 +4942,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xeb,
+    opcode: 0xeb,
     mnemonic: 'ILLEGAL_EB',
     bytes: 1,
     cycles: [4],
@@ -4956,7 +4956,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xec,
+    opcode: 0xec,
     mnemonic: 'ILLEGAL_EC',
     bytes: 1,
     cycles: [4],
@@ -4970,7 +4970,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xed,
+    opcode: 0xed,
     mnemonic: 'ILLEGAL_ED',
     bytes: 1,
     cycles: [4],
@@ -4984,7 +4984,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xee,
+    opcode: 0xee,
     mnemonic: 'XOR',
     bytes: 2,
     cycles: [8],
@@ -5004,7 +5004,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xef,
+    opcode: 0xef,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -5023,7 +5023,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf0,
+    opcode: 0xf0,
     mnemonic: 'LDH',
     bytes: 2,
     cycles: [12],
@@ -5047,7 +5047,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf1,
+    opcode: 0xf1,
     mnemonic: 'POP',
     bytes: 1,
     cycles: [12],
@@ -5066,7 +5066,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf2,
+    opcode: 0xf2,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -5089,7 +5089,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf3,
+    opcode: 0xf3,
     mnemonic: 'DI',
     bytes: 1,
     cycles: [4],
@@ -5103,7 +5103,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf4,
+    opcode: 0xf4,
     mnemonic: 'ILLEGAL_F4',
     bytes: 1,
     cycles: [4],
@@ -5117,7 +5117,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf5,
+    opcode: 0xf5,
     mnemonic: 'PUSH',
     bytes: 1,
     cycles: [16],
@@ -5136,7 +5136,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf6,
+    opcode: 0xf6,
     mnemonic: 'OR',
     bytes: 2,
     cycles: [8],
@@ -5156,7 +5156,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf7,
+    opcode: 0xf7,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -5175,7 +5175,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf8,
+    opcode: 0xf8,
     mnemonic: 'LD',
     bytes: 2,
     cycles: [12],
@@ -5199,7 +5199,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf9,
+    opcode: 0xf9,
     mnemonic: 'LD',
     bytes: 1,
     cycles: [8],
@@ -5222,7 +5222,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfa,
+    opcode: 0xfa,
     mnemonic: 'LD',
     bytes: 3,
     cycles: [16],
@@ -5246,7 +5246,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfb,
+    opcode: 0xfb,
     mnemonic: 'EI',
     bytes: 1,
     cycles: [4],
@@ -5260,7 +5260,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfc,
+    opcode: 0xfc,
     mnemonic: 'ILLEGAL_FC',
     bytes: 1,
     cycles: [4],
@@ -5274,7 +5274,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfd,
+    opcode: 0xfd,
     mnemonic: 'ILLEGAL_FD',
     bytes: 1,
     cycles: [4],
@@ -5288,7 +5288,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfe,
+    opcode: 0xfe,
     mnemonic: 'CP',
     bytes: 2,
     cycles: [8],
@@ -5308,7 +5308,7 @@ export const opcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xff,
+    opcode: 0xff,
     mnemonic: 'RST',
     bytes: 1,
     cycles: [16],
@@ -5328,9 +5328,9 @@ export const opcodes: OpcodeToken[] = [
   },
 ];
 
-export const cbPrefixedOpcodes: OpcodeToken[] = [
+export const cbPrefixedOpcodes: InstructionToken[] = [
   {
-    index: 0x00,
+    opcode: 0x00,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5349,7 +5349,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x01,
+    opcode: 0x01,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5368,7 +5368,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x02,
+    opcode: 0x02,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5387,7 +5387,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x03,
+    opcode: 0x03,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5406,7 +5406,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x04,
+    opcode: 0x04,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5425,7 +5425,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x05,
+    opcode: 0x05,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5444,7 +5444,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x06,
+    opcode: 0x06,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [16],
@@ -5463,7 +5463,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x07,
+    opcode: 0x07,
     mnemonic: 'RLC',
     bytes: 2,
     cycles: [8],
@@ -5482,7 +5482,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x08,
+    opcode: 0x08,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5501,7 +5501,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x09,
+    opcode: 0x09,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5520,7 +5520,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0a,
+    opcode: 0x0a,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5539,7 +5539,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0b,
+    opcode: 0x0b,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5558,7 +5558,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0c,
+    opcode: 0x0c,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5577,7 +5577,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0d,
+    opcode: 0x0d,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5596,7 +5596,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0e,
+    opcode: 0x0e,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [16],
@@ -5615,7 +5615,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x0f,
+    opcode: 0x0f,
     mnemonic: 'RRC',
     bytes: 2,
     cycles: [8],
@@ -5634,7 +5634,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x10,
+    opcode: 0x10,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5653,7 +5653,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x11,
+    opcode: 0x11,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5672,7 +5672,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x12,
+    opcode: 0x12,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5691,7 +5691,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x13,
+    opcode: 0x13,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5710,7 +5710,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x14,
+    opcode: 0x14,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5729,7 +5729,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x15,
+    opcode: 0x15,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5748,7 +5748,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x16,
+    opcode: 0x16,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [16],
@@ -5767,7 +5767,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x17,
+    opcode: 0x17,
     mnemonic: 'RL',
     bytes: 2,
     cycles: [8],
@@ -5786,7 +5786,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x18,
+    opcode: 0x18,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5805,7 +5805,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x19,
+    opcode: 0x19,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5824,7 +5824,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1a,
+    opcode: 0x1a,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5843,7 +5843,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1b,
+    opcode: 0x1b,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5862,7 +5862,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1c,
+    opcode: 0x1c,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5881,7 +5881,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1d,
+    opcode: 0x1d,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5900,7 +5900,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1e,
+    opcode: 0x1e,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [16],
@@ -5919,7 +5919,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x1f,
+    opcode: 0x1f,
     mnemonic: 'RR',
     bytes: 2,
     cycles: [8],
@@ -5938,7 +5938,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x20,
+    opcode: 0x20,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -5957,7 +5957,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x21,
+    opcode: 0x21,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -5976,7 +5976,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x22,
+    opcode: 0x22,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -5995,7 +5995,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x23,
+    opcode: 0x23,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -6014,7 +6014,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x24,
+    opcode: 0x24,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -6033,7 +6033,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x25,
+    opcode: 0x25,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -6052,7 +6052,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x26,
+    opcode: 0x26,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [16],
@@ -6071,7 +6071,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x27,
+    opcode: 0x27,
     mnemonic: 'SLA',
     bytes: 2,
     cycles: [8],
@@ -6090,7 +6090,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x28,
+    opcode: 0x28,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6109,7 +6109,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x29,
+    opcode: 0x29,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6128,7 +6128,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2a,
+    opcode: 0x2a,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6147,7 +6147,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2b,
+    opcode: 0x2b,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6166,7 +6166,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2c,
+    opcode: 0x2c,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6185,7 +6185,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2d,
+    opcode: 0x2d,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6204,7 +6204,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2e,
+    opcode: 0x2e,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [16],
@@ -6223,7 +6223,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x2f,
+    opcode: 0x2f,
     mnemonic: 'SRA',
     bytes: 2,
     cycles: [8],
@@ -6242,7 +6242,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x30,
+    opcode: 0x30,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6261,7 +6261,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x31,
+    opcode: 0x31,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6280,7 +6280,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x32,
+    opcode: 0x32,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6299,7 +6299,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x33,
+    opcode: 0x33,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6318,7 +6318,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x34,
+    opcode: 0x34,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6337,7 +6337,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x35,
+    opcode: 0x35,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6356,7 +6356,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x36,
+    opcode: 0x36,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [16],
@@ -6375,7 +6375,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x37,
+    opcode: 0x37,
     mnemonic: 'SWAP',
     bytes: 2,
     cycles: [8],
@@ -6394,7 +6394,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x38,
+    opcode: 0x38,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6413,7 +6413,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x39,
+    opcode: 0x39,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6432,7 +6432,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3a,
+    opcode: 0x3a,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6451,7 +6451,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3b,
+    opcode: 0x3b,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6470,7 +6470,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3c,
+    opcode: 0x3c,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6489,7 +6489,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3d,
+    opcode: 0x3d,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6508,7 +6508,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3e,
+    opcode: 0x3e,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [16],
@@ -6527,7 +6527,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x3f,
+    opcode: 0x3f,
     mnemonic: 'SRL',
     bytes: 2,
     cycles: [8],
@@ -6546,7 +6546,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x40,
+    opcode: 0x40,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6569,7 +6569,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x41,
+    opcode: 0x41,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6592,7 +6592,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x42,
+    opcode: 0x42,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6615,7 +6615,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x43,
+    opcode: 0x43,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6638,7 +6638,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x44,
+    opcode: 0x44,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6661,7 +6661,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x45,
+    opcode: 0x45,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6684,7 +6684,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x46,
+    opcode: 0x46,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
@@ -6707,7 +6707,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x47,
+    opcode: 0x47,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6730,7 +6730,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x48,
+    opcode: 0x48,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6753,7 +6753,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x49,
+    opcode: 0x49,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6776,7 +6776,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4a,
+    opcode: 0x4a,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6799,7 +6799,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4b,
+    opcode: 0x4b,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6822,7 +6822,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4c,
+    opcode: 0x4c,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6845,7 +6845,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4d,
+    opcode: 0x4d,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6868,7 +6868,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4e,
+    opcode: 0x4e,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
@@ -6891,7 +6891,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x4f,
+    opcode: 0x4f,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6914,7 +6914,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x50,
+    opcode: 0x50,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6937,7 +6937,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x51,
+    opcode: 0x51,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6960,7 +6960,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x52,
+    opcode: 0x52,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -6983,7 +6983,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x53,
+    opcode: 0x53,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7006,7 +7006,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x54,
+    opcode: 0x54,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7029,7 +7029,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x55,
+    opcode: 0x55,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7052,7 +7052,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x56,
+    opcode: 0x56,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
@@ -7075,7 +7075,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x57,
+    opcode: 0x57,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7098,7 +7098,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x58,
+    opcode: 0x58,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7121,7 +7121,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x59,
+    opcode: 0x59,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7144,7 +7144,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5a,
+    opcode: 0x5a,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7167,7 +7167,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5b,
+    opcode: 0x5b,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7190,7 +7190,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5c,
+    opcode: 0x5c,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7213,7 +7213,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5d,
+    opcode: 0x5d,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7236,7 +7236,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5e,
+    opcode: 0x5e,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
@@ -7259,7 +7259,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x5f,
+    opcode: 0x5f,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7282,7 +7282,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x60,
+    opcode: 0x60,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7305,7 +7305,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x61,
+    opcode: 0x61,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7328,7 +7328,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x62,
+    opcode: 0x62,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7351,7 +7351,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x63,
+    opcode: 0x63,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7374,7 +7374,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x64,
+    opcode: 0x64,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7397,7 +7397,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x65,
+    opcode: 0x65,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7420,7 +7420,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x66,
+    opcode: 0x66,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
@@ -7443,7 +7443,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x67,
+    opcode: 0x67,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7466,7 +7466,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x68,
+    opcode: 0x68,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7489,7 +7489,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x69,
+    opcode: 0x69,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7512,7 +7512,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6a,
+    opcode: 0x6a,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7535,7 +7535,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6b,
+    opcode: 0x6b,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7558,7 +7558,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6c,
+    opcode: 0x6c,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7581,7 +7581,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6d,
+    opcode: 0x6d,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7604,7 +7604,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6e,
+    opcode: 0x6e,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
@@ -7627,7 +7627,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x6f,
+    opcode: 0x6f,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7650,7 +7650,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x70,
+    opcode: 0x70,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7673,7 +7673,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x71,
+    opcode: 0x71,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7696,7 +7696,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x72,
+    opcode: 0x72,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7719,7 +7719,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x73,
+    opcode: 0x73,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7742,7 +7742,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x74,
+    opcode: 0x74,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7765,7 +7765,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x75,
+    opcode: 0x75,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -7788,196 +7788,196 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x76,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [12],
-    operands: [
-      {
-        name: 6,
-        immediate: true,
-      },
-      {
-        name: 'HL',
-        immediate: false,
-      },
-    ],
-    immediate: false,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x77,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 6,
-        immediate: true,
-      },
-      {
-        name: 'A',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x78,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 7,
-        immediate: true,
-      },
-      {
-        name: 'B',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x79,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 7,
-        immediate: true,
-      },
-      {
-        name: 'C',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x7a,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 7,
-        immediate: true,
-      },
-      {
-        name: 'D',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x7b,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 7,
-        immediate: true,
-      },
-      {
-        name: 'E',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x7c,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 7,
-        immediate: true,
-      },
-      {
-        name: 'H',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x7d,
-    mnemonic: 'BIT',
-    bytes: 2,
-    cycles: [8],
-    operands: [
-      {
-        name: 7,
-        immediate: true,
-      },
-      {
-        name: 'L',
-        immediate: true,
-      },
-    ],
-    immediate: true,
-    flags: {
-      Z: 'Z',
-      N: '0',
-      H: '1',
-      C: '-',
-    },
-  },
-  {
-    index: 0x7e,
+    opcode: 0x76,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [12],
     operands: [
       {
+        name: 6,
+        immediate: true,
+      },
+      {
+        name: 'HL',
+        immediate: false,
+      },
+    ],
+    immediate: false,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x77,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 6,
+        immediate: true,
+      },
+      {
+        name: 'A',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x78,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 7,
+        immediate: true,
+      },
+      {
+        name: 'B',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x79,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 7,
+        immediate: true,
+      },
+      {
+        name: 'C',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x7a,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 7,
+        immediate: true,
+      },
+      {
+        name: 'D',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x7b,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 7,
+        immediate: true,
+      },
+      {
+        name: 'E',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x7c,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 7,
+        immediate: true,
+      },
+      {
+        name: 'H',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x7d,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [8],
+    operands: [
+      {
+        name: 7,
+        immediate: true,
+      },
+      {
+        name: 'L',
+        immediate: true,
+      },
+    ],
+    immediate: true,
+    flags: {
+      Z: 'Z',
+      N: '0',
+      H: '1',
+      C: '-',
+    },
+  },
+  {
+    opcode: 0x7e,
+    mnemonic: 'BIT',
+    bytes: 2,
+    cycles: [12],
+    operands: [
+      {
         name: 7,
         immediate: true,
       },
@@ -7995,7 +7995,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x7f,
+    opcode: 0x7f,
     mnemonic: 'BIT',
     bytes: 2,
     cycles: [8],
@@ -8018,7 +8018,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x80,
+    opcode: 0x80,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8041,7 +8041,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x81,
+    opcode: 0x81,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8064,7 +8064,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x82,
+    opcode: 0x82,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8087,7 +8087,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x83,
+    opcode: 0x83,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8110,7 +8110,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x84,
+    opcode: 0x84,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8133,7 +8133,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x85,
+    opcode: 0x85,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8156,7 +8156,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x86,
+    opcode: 0x86,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -8179,7 +8179,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x87,
+    opcode: 0x87,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8202,7 +8202,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x88,
+    opcode: 0x88,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8225,7 +8225,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x89,
+    opcode: 0x89,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8248,7 +8248,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8a,
+    opcode: 0x8a,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8271,7 +8271,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8b,
+    opcode: 0x8b,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8294,7 +8294,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8c,
+    opcode: 0x8c,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8317,7 +8317,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8d,
+    opcode: 0x8d,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8340,7 +8340,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8e,
+    opcode: 0x8e,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -8363,7 +8363,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x8f,
+    opcode: 0x8f,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8386,7 +8386,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x90,
+    opcode: 0x90,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8409,7 +8409,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x91,
+    opcode: 0x91,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8432,7 +8432,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x92,
+    opcode: 0x92,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8455,7 +8455,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x93,
+    opcode: 0x93,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8478,7 +8478,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x94,
+    opcode: 0x94,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8501,7 +8501,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x95,
+    opcode: 0x95,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8524,7 +8524,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x96,
+    opcode: 0x96,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -8547,7 +8547,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x97,
+    opcode: 0x97,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8570,7 +8570,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x98,
+    opcode: 0x98,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8593,7 +8593,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x99,
+    opcode: 0x99,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8616,7 +8616,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9a,
+    opcode: 0x9a,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8639,7 +8639,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9b,
+    opcode: 0x9b,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8662,7 +8662,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9c,
+    opcode: 0x9c,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8685,7 +8685,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9d,
+    opcode: 0x9d,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8708,7 +8708,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9e,
+    opcode: 0x9e,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -8731,7 +8731,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0x9f,
+    opcode: 0x9f,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8754,7 +8754,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa0,
+    opcode: 0xa0,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8777,7 +8777,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa1,
+    opcode: 0xa1,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8800,7 +8800,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa2,
+    opcode: 0xa2,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8823,7 +8823,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa3,
+    opcode: 0xa3,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8846,7 +8846,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa4,
+    opcode: 0xa4,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8869,7 +8869,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa5,
+    opcode: 0xa5,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8892,7 +8892,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa6,
+    opcode: 0xa6,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -8915,7 +8915,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa7,
+    opcode: 0xa7,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8938,7 +8938,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa8,
+    opcode: 0xa8,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8961,7 +8961,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xa9,
+    opcode: 0xa9,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -8984,7 +8984,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xaa,
+    opcode: 0xaa,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9007,7 +9007,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xab,
+    opcode: 0xab,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9030,7 +9030,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xac,
+    opcode: 0xac,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9053,7 +9053,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xad,
+    opcode: 0xad,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9076,7 +9076,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xae,
+    opcode: 0xae,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -9099,7 +9099,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xaf,
+    opcode: 0xaf,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9122,7 +9122,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb0,
+    opcode: 0xb0,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9145,7 +9145,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb1,
+    opcode: 0xb1,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9168,7 +9168,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb2,
+    opcode: 0xb2,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9191,7 +9191,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb3,
+    opcode: 0xb3,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9214,7 +9214,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb4,
+    opcode: 0xb4,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9237,7 +9237,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb5,
+    opcode: 0xb5,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9260,7 +9260,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb6,
+    opcode: 0xb6,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -9283,7 +9283,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb7,
+    opcode: 0xb7,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9306,7 +9306,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb8,
+    opcode: 0xb8,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9329,7 +9329,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xb9,
+    opcode: 0xb9,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9352,7 +9352,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xba,
+    opcode: 0xba,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9375,7 +9375,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbb,
+    opcode: 0xbb,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9398,7 +9398,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbc,
+    opcode: 0xbc,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9421,7 +9421,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbd,
+    opcode: 0xbd,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9444,7 +9444,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbe,
+    opcode: 0xbe,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [16],
@@ -9467,7 +9467,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xbf,
+    opcode: 0xbf,
     mnemonic: 'RES',
     bytes: 2,
     cycles: [8],
@@ -9490,7 +9490,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc0,
+    opcode: 0xc0,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9513,7 +9513,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc1,
+    opcode: 0xc1,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9536,7 +9536,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc2,
+    opcode: 0xc2,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9559,7 +9559,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc3,
+    opcode: 0xc3,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9582,7 +9582,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc4,
+    opcode: 0xc4,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9605,7 +9605,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc5,
+    opcode: 0xc5,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9628,7 +9628,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc6,
+    opcode: 0xc6,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -9651,7 +9651,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc7,
+    opcode: 0xc7,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9674,7 +9674,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc8,
+    opcode: 0xc8,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9697,7 +9697,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xc9,
+    opcode: 0xc9,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9720,7 +9720,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xca,
+    opcode: 0xca,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9743,7 +9743,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcb,
+    opcode: 0xcb,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9766,7 +9766,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcc,
+    opcode: 0xcc,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9789,7 +9789,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcd,
+    opcode: 0xcd,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9812,7 +9812,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xce,
+    opcode: 0xce,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -9835,7 +9835,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xcf,
+    opcode: 0xcf,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9858,7 +9858,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd0,
+    opcode: 0xd0,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9881,7 +9881,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd1,
+    opcode: 0xd1,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9904,7 +9904,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd2,
+    opcode: 0xd2,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9927,7 +9927,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd3,
+    opcode: 0xd3,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9950,7 +9950,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd4,
+    opcode: 0xd4,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9973,7 +9973,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd5,
+    opcode: 0xd5,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -9996,7 +9996,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd6,
+    opcode: 0xd6,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -10019,7 +10019,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd7,
+    opcode: 0xd7,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10042,7 +10042,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd8,
+    opcode: 0xd8,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10065,7 +10065,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xd9,
+    opcode: 0xd9,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10088,7 +10088,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xda,
+    opcode: 0xda,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10111,7 +10111,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdb,
+    opcode: 0xdb,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10134,7 +10134,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdc,
+    opcode: 0xdc,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10157,7 +10157,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdd,
+    opcode: 0xdd,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10180,7 +10180,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xde,
+    opcode: 0xde,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -10203,7 +10203,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xdf,
+    opcode: 0xdf,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10226,7 +10226,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe0,
+    opcode: 0xe0,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10249,7 +10249,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe1,
+    opcode: 0xe1,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10272,7 +10272,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe2,
+    opcode: 0xe2,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10295,7 +10295,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe3,
+    opcode: 0xe3,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10318,7 +10318,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe4,
+    opcode: 0xe4,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10341,7 +10341,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe5,
+    opcode: 0xe5,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10364,7 +10364,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe6,
+    opcode: 0xe6,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -10387,7 +10387,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe7,
+    opcode: 0xe7,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10410,7 +10410,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe8,
+    opcode: 0xe8,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10433,7 +10433,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xe9,
+    opcode: 0xe9,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10456,7 +10456,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xea,
+    opcode: 0xea,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10479,7 +10479,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xeb,
+    opcode: 0xeb,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10502,7 +10502,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xec,
+    opcode: 0xec,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10525,7 +10525,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xed,
+    opcode: 0xed,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10548,7 +10548,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xee,
+    opcode: 0xee,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -10571,7 +10571,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xef,
+    opcode: 0xef,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10594,7 +10594,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf0,
+    opcode: 0xf0,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10617,7 +10617,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf1,
+    opcode: 0xf1,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10640,7 +10640,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf2,
+    opcode: 0xf2,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10663,7 +10663,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf3,
+    opcode: 0xf3,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10686,7 +10686,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf4,
+    opcode: 0xf4,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10709,7 +10709,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf5,
+    opcode: 0xf5,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10732,7 +10732,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf6,
+    opcode: 0xf6,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -10755,7 +10755,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf7,
+    opcode: 0xf7,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10778,7 +10778,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf8,
+    opcode: 0xf8,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10801,7 +10801,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xf9,
+    opcode: 0xf9,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10824,7 +10824,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfa,
+    opcode: 0xfa,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10847,7 +10847,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfb,
+    opcode: 0xfb,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10870,7 +10870,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfc,
+    opcode: 0xfc,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10893,7 +10893,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfd,
+    opcode: 0xfd,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
@@ -10916,7 +10916,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xfe,
+    opcode: 0xfe,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [16],
@@ -10939,7 +10939,7 @@ export const cbPrefixedOpcodes: OpcodeToken[] = [
     },
   },
   {
-    index: 0xff,
+    opcode: 0xff,
     mnemonic: 'SET',
     bytes: 2,
     cycles: [8],
