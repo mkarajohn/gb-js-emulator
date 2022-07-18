@@ -1,9 +1,9 @@
 import { cbPrefixedOpcodes, instructionSet } from 'instruction-set';
-import type { InstructionToken, Operands } from 'types.d';
+import type { InstructionToken, Operand } from 'types.d';
 import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from 'utils';
 import type { DisassembledInstructionToken } from './types.d';
 
-function replaceOperandTypeWithValue(operand: Operands, bytecode: Uint8Array, index: number) {
+function replaceOperandTypeWithValue(operand: Operand, bytecode: Uint8Array, index: number) {
   switch (operand) {
     case 'a8':
     case 'r8':

@@ -1,6 +1,6 @@
 import { cbInstructions } from 'cb-instructions';
 import { instructionSet } from 'instruction-set';
-import { readMemAddr, writeToMemAddr } from 'memory';
+import { memory } from 'memory';
 import {
   getRegisterValue,
   regA,
@@ -15,7 +15,7 @@ import {
   regPC,
   setRegisterValue,
 } from 'registers';
-import { InstructionToken } from 'types';
+import { InstructionToken, Register } from 'types';
 import { convertNumberToHexString, signedOffset } from 'utils';
 
 let index = 0;
@@ -52,20 +52,23 @@ function ld8Immediate(instructionToken: InstructionToken) {
       // Register to register
       return function () {
         logInstruction('LD8IM', instructionToken);
-        setRegisterValue(destination.name, getRegisterValue(source.name));
+        const PC = getRegisterValue(regPC);
+        const registerValue = getRegisterValue(source.name as Register);
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        setRegisterValue(destination.name as Register, registerValue);
+        setRegisterValue(regPC, PC + bytes);
 
         return cycles[0];
       };
-      break;
     default:
       // Value to register
       return function () {
         logInstruction('LD8IM', instructionToken);
-        setRegisterValue(destination.name, readMemAddr(getRegisterValue(regPC) + 1));
+        const PC = getRegisterValue(regPC);
+        const memoryValue = memory.readUint8(PC + 1);
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        setRegisterValue(destination.name as Register, memoryValue);
+        setRegisterValue(regPC, PC + bytes);
 
         return cycles[0];
       };
@@ -81,9 +84,11 @@ function ld16Immediate(instructionToken: InstructionToken) {
       // HL to SP - OP 0xf9
       return function () {
         logInstruction('LD16IM', instructionToken);
-        setRegisterValue(destination.name, getRegisterValue(source.name));
+        const PC = getRegisterValue(regPC);
+        const registerValue = getRegisterValue(source.name as Register);
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        setRegisterValue(destination.name as Register, registerValue);
+        setRegisterValue(regPC, PC + bytes);
 
         return cycles[0];
       };
@@ -91,12 +96,12 @@ function ld16Immediate(instructionToken: InstructionToken) {
       // Value to register
       return function () {
         logInstruction('LD16IM', instructionToken);
-        setRegisterValue(
-          destination.name,
-          readMemAddr(getRegisterValue(regPC) + 1) + (readMemAddr(getRegisterValue(regPC) + 2) << 8)
-        );
+        const PC = getRegisterValue(regPC);
+        const lowByte = memory.readUint8(PC + 1);
+        const highByte = memory.readUint8(PC + 2);
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        setRegisterValue(destination.name as Register, lowByte | (highByte << 8));
+        setRegisterValue(regPC, PC + bytes);
 
         return cycles[0];
       };
@@ -111,11 +116,13 @@ function ldd(instructionToken: InstructionToken) {
   if (destination.name === regA && source.name === regHL) {
     return function () {
       logInstruction('LDD', instructionToken);
-      const valueHL = getRegisterValue(regHL);
-      setRegisterValue(regA, readMemAddr(valueHL));
-      setRegisterValue(regHL, valueHL - 1);
+      const PC = getRegisterValue(regPC);
+      const HL = getRegisterValue(regHL);
+      const memoryValue = memory.readUint8(HL);
 
-      setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+      setRegisterValue(regA, memoryValue);
+      setRegisterValue(regHL, HL - 1);
+      setRegisterValue(regPC, PC + bytes);
 
       return cycles[0];
     };
@@ -124,11 +131,14 @@ function ldd(instructionToken: InstructionToken) {
   // ld (hl-) a
   return function () {
     logInstruction('LDD', instructionToken);
-    const valueHL = getRegisterValue(regHL);
-    writeToMemAddr(valueHL, getRegisterValue(regA));
-    setRegisterValue(regHL, valueHL - 1);
+    const PC = getRegisterValue(regPC);
+    const HL = getRegisterValue(regHL);
+    const A = getRegisterValue(regA);
 
-    setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+    memory.writeUint8(HL, A);
+
+    setRegisterValue(regHL, HL - 1);
+    setRegisterValue(regPC, PC + bytes);
 
     return cycles[0];
   };
@@ -150,12 +160,15 @@ function xorImmediate(instructionToken: InstructionToken) {
       // Register to register
       return function () {
         logInstruction('XORIM', instructionToken);
-        const value = getRegisterValue(regA) ^ getRegisterValue(source.name);
-        setRegisterValue(regA, value);
-        // update Z flag and reset the rest of the flags
-        setRegisterValue(regF, value === 0 ? 0b10000000 : 0b00000000);
+        const PC = getRegisterValue(regPC);
+        const A = getRegisterValue(regA);
+        const registerValue = getRegisterValue(source.name as Register);
+        const XORResult = A ^ registerValue;
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        setRegisterValue(regA, XORResult);
+        // update Z flag and reset the rest of the flags
+        setRegisterValue(regF, XORResult === 0 ? 0b10000000 : 0b00000000);
+        setRegisterValue(regPC, PC + bytes);
 
         return cycles[0];
       };
@@ -163,8 +176,12 @@ function xorImmediate(instructionToken: InstructionToken) {
       // Value to register
       return function () {
         logInstruction('XORIM', instructionToken);
-        setRegisterValue(regA, getRegisterValue(regA) ^ readMemAddr(getRegisterValue(regPC) + 1));
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        const PC = getRegisterValue(regPC);
+        const A = getRegisterValue(regA);
+        const memoryValue = memory.readUint8(PC + 1);
+
+        setRegisterValue(regA, A ^ memoryValue);
+        setRegisterValue(regPC, PC + bytes);
 
         return cycles[0];
       };
@@ -172,32 +189,45 @@ function xorImmediate(instructionToken: InstructionToken) {
 }
 
 function cb() {
-  return cbInstructions[readMemAddr(getRegisterValue(regPC) + 1)]();
+  return cbInstructions[memory.readUint8(getRegisterValue(regPC) + 1)]();
 }
 
 function jrnz() {
   const instructionToken = instructionSet[0x20];
   const { cycles, bytes } = instructionToken;
-
+  const PC = getRegisterValue(regPC);
+  const F = getRegisterValue(regF);
   // 1 means we have a 0, 0 means we do not have a zero
-  const ZflagCheckBit = (getRegisterValue(regF) & 0b10000000) >> 7;
+  const ZflagCheckBit = (F & 0b10000000) >> 7;
 
   switch (ZflagCheckBit) {
     case 0:
       // not zero
       logInstruction('JRNZ', instructionToken);
-      const PCregValue = getRegisterValue(regPC);
+      const memoryValue = memory.readUint8(PC + 1);
 
-      setRegisterValue(regPC, PCregValue + bytes + signedOffset(readMemAddr(PCregValue + 1)));
+      setRegisterValue(regPC, PC + bytes + signedOffset(memoryValue));
 
       return cycles[0];
     default:
       // zero
       logInstruction('JRNZ', instructionToken);
-      setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+      setRegisterValue(regPC, PC + bytes);
 
       return cycles[1];
   }
+}
+
+function jp() {
+  const instructionToken = instructionSet[0xc3];
+  const { cycles } = instructionToken;
+  const PC = getRegisterValue(regPC);
+  const lowByte = memory.readUint8(PC + 1);
+  const highByte = memory.readUint8(PC + 2);
+
+  setRegisterValue(regPC, lowByte | (highByte << 8));
+
+  return cycles[0];
 }
 
 export const instructions: (() => number)[] = new Array(0x100);
@@ -287,6 +317,7 @@ instructions[0xac] = xorImmediate(instructionSet[0xac]);
 instructions[0xad] = xorImmediate(instructionSet[0xad]);
 instructions[0xaf] = xorImmediate(instructionSet[0xaf]);
 
+instructions[0xc3] = jp;
 instructions[0xcb] = cb;
 
 instructions[0xee] = xorImmediate(instructionSet[0xee]);

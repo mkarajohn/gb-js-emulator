@@ -1,29 +1,31 @@
 import { instructions } from 'instructions';
-import { readMemAddr } from 'memory';
+import { memory } from 'memory';
 import { getRegisterValue, regPC } from 'registers';
+
+function fetch(address) {
+  return instructions[memory.readUint8(address)];
+}
 
 function execute(instruction: () => number) {
   return instruction();
 }
 
 function run() {
-  let work = true;
+  let halt = false;
 
   const t0 = performance.now();
   let t1;
 
-  while (work) {
+  while (!halt) {
     try {
       const address = getRegisterValue(regPC);
-      if (address < 20) {
-        const instruction = instructions[readMemAddr(address)];
-
-        cpu.execute(instruction);
+      if (address < 0x14 || address === 0x0100) {
+        cpu.execute(fetch(address));
       } else {
         t1 = performance.now();
+        console.log(`Iteration took ${t1 - t0} milliseconds.`);
         console.log('exiting');
-        console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
-        work = false;
+        halt = true;
       }
     } catch (err) {
       console.log(err);

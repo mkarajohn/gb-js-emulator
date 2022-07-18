@@ -1,7 +1,7 @@
 import { enableBootROM, readBootROM } from 'bootROM';
 import { cpu } from 'cpu';
 import disassemble from 'disassembler';
-import { loadToMem } from 'memory';
+import { memory } from 'memory';
 import { Fragment, useEffect, useState } from 'react';
 
 const emptyBootcode = new Uint8Array(256);
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     enableBootROM();
-    loadToMem(bootCode);
+    memory.load(bootCode);
     cpu.run();
   }, []);
 

@@ -1,5 +1,5 @@
 import { cbPrefixedOpcodes, instructionSet } from 'instruction-set';
-import { readMemAddr } from 'memory';
+import { memory } from 'memory';
 import {
   getRegisterValue,
   regA,
@@ -13,7 +13,7 @@ import {
   regPC,
   setRegisterValue,
 } from 'registers';
-import { InstructionToken } from 'types';
+import { InstructionToken, Register } from 'types';
 
 let index = 0;
 
@@ -57,7 +57,7 @@ function bit(instructionToken: InstructionToken) {
     case regL:
       return function () {
         logInstruction('BIT', instructionToken);
-        const registerValue = getRegisterValue(register.name);
+        const registerValue = getRegisterValue(register.name as Register);
 
         // update Z flag, reset flag N, set flag H
         setRegisterValue(regF, setFlags(registerValue));
@@ -71,7 +71,7 @@ function bit(instructionToken: InstructionToken) {
       // register HL
       return function () {
         logInstruction('BIT', instructionToken);
-        const registerValue = readMemAddr(getRegisterValue(register.name));
+        const registerValue = memory.readUint8(getRegisterValue(register.name as Register));
 
         // update Z flag, reset flag N, set flag H
         setRegisterValue(regF, setFlags(registerValue));

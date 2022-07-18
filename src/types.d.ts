@@ -1,20 +1,8 @@
-export type Register = number;
+export type SingleRegister = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'H' | 'L' | 'SP' | 'PC';
 
-export type RegisterNames =
-  | 'A'
-  | 'B'
-  | 'C'
-  | 'D'
-  | 'E'
-  | 'F'
-  | 'H'
-  | 'L'
-  | 'AF'
-  | 'BC'
-  | 'DE'
-  | 'HL'
-  | 'SP'
-  | 'PC';
+export type RegisterPair = 'AF' | 'BC' | 'DE' | 'HL';
+
+export type Register = SingleRegister | RegisterPair;
 
 // d8  means immediate 8 bit data
 // d16 means immediate 16 bit data
@@ -32,8 +20,8 @@ export type Flags = {
   C: 'C' | FlagState;
 };
 
-export type Operands =
-  | RegisterNames
+export type Operand =
+  | Register
   | OperandTypes
   | 'Ignored'
   | 'Z'
@@ -62,7 +50,7 @@ type InstructionToken = {
   bytes: number;
   cycles: number[];
   operands: {
-    name: Operands;
+    name: Operand;
     immediate: boolean;
     bytes?: number;
     increment?: boolean;

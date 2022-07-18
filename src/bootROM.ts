@@ -1,4 +1,4 @@
-import { writeToMemAddr } from 'memory';
+import { memory } from 'memory';
 
 //prettier-ignore
 const bootCode = new Uint8Array([
@@ -25,9 +25,9 @@ export function readBootROM() {
 }
 
 export function disableBootROM() {
-  writeToMemAddr(0xff50, 0);
+  memory.writeUint8(0xff50, 0);
 }
 
 export function enableBootROM() {
-  writeToMemAddr(0xff50, 1);
+  memory.writeUint8(0xff50, 1);
 }

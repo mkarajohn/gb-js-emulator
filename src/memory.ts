@@ -20,83 +20,13 @@
  *
  */
 
-const memory = new Uint8Array(0x10000);
-memory.fill(1);
+import { createMemory } from 'factories/create-memory';
 
-// Read 8-bit byte from address
-function rb(address: number) {
-  const value = memory.at(address);
-
-  if (value === undefined) {
-    throw new Error(`Address ${address} is out of range`);
-  }
-
-  return value;
-}
-
-// Write 8-bit byte to address
-function wb(address: number, value: number) {
-  if (rb(address) === undefined) {
-    throw new Error(`Address ${address} is out of range`);
-  }
-
-  memory.set([value], address);
-}
-
-// Read 16-bit word from address
-function rw(address: number) {
-  const highByte = memory.at(address + 1);
-  const lowByte = memory.at(address);
-
-  if (highByte === undefined || lowByte === undefined) {
-    throw new Error(`Address ${address} is out of range`);
-  }
-
-  return (highByte << 8) + lowByte;
-}
-
-// Write 16-bit word to address
-function ww(address: number, value: number) {
-  const highByte = (value >> 8) & 0xff;
-  const lowByte = value & 0xff;
-
-  if (rb(address) === undefined || rb(address + 1) === undefined) {
-    throw new Error(`Address ${address} is out of range`);
-  }
-
-  memory.set([lowByte], address);
-  memory.set([highByte], address + 1);
-}
-
-export function dumpMem() {
-  return new Uint8Array(memory);
-}
-
-export function loadToMem(value: number | Uint8Array, offset?: number) {
-  if (typeof value === 'number') {
-    memory.set([value], offset);
-  } else {
-    memory.set(value, offset);
-  }
-}
-
-export function readMemAddr(address: number) {
-  return rb(address);
-}
-
-export function writeToMemAddr(address: number, value: number) {
-  if (value > 0xff) {
-    // Write word
-    ww(address, value);
-  } else {
-    // Write byte
-    wb(address, value);
-  }
-}
+export const memory = createMemory(0x10000);
+memory.load(new Uint8Array(Array(0x10000).fill(1)));
+memory.writeUint8(0x0100, 0xc3);
+memory.writeUint8(0x0101, 0);
+memory.writeUint8(0x0102, 0);
 
 //@ts-ignore
 window.memory = memory;
-//@ts-ignore
-window.readMem = readMemAddr;
-//@ts-ignore
-window.writeMem = writeToMemAddr;
