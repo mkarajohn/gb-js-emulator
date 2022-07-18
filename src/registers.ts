@@ -20,18 +20,27 @@ export const regHL = 'HL';
 export type RegisterToken = { name: SingleRegister; bits: 8 | 16; initialValue: number };
 
 //prettier-ignore
+// The whole point of this ordering is to be able to read register pairs with the existing
+// read/writeUint16 methods. Since the system is little endian, 2 byte values are written and read
+// with the low byte at address n and the high byte at address n+1.
+// So, instead of mapping the registers as
+// n A
+// n+1 F
+// we map them as
+// n F
+// n+1 A
+// To be in line with little endianness.
 const registerUint8Tokens: RegisterToken[] = [
-  {name: regA, bits: 8, initialValue: 0x01}, {name: regF, bits: 8, initialValue: 0x00},
-  {name: regB, bits: 8, initialValue: 0x00}, {name: regC, bits: 8, initialValue: 0x13},
-  {name: regD, bits: 8, initialValue: 0x00}, {name: regE, bits: 8, initialValue: 0xd8},
-  {name: regH, bits: 8, initialValue: 0x01}, {name: regL, bits: 8, initialValue: 0x4d}
+  {name: regF, bits: 8, initialValue: 0x00}, {name: regA, bits: 8, initialValue: 0x01},
+  {name: regC, bits: 8, initialValue: 0x13}, {name: regB, bits: 8, initialValue: 0x00},
+  {name: regE, bits: 8, initialValue: 0xd8}, {name: regD, bits: 8, initialValue: 0x00},
+  {name: regL, bits: 8, initialValue: 0x4d}, {name: regH, bits: 8, initialValue: 0x01},
 ]
 
-//prettier-ignore
 const registerUint16Tokens: RegisterToken[] = [
-  {name: regSP, bits: 16, initialValue: 0xfffe},
-  {name: regPC, bits: 16, initialValue: 0x0100}
-]
+  { name: regSP, bits: 16, initialValue: 0xfffe },
+  { name: regPC, bits: 16, initialValue: 0x0100 },
+];
 
 const registerTokens: RegisterToken[] = [...registerUint8Tokens, ...registerUint16Tokens];
 
@@ -97,20 +106,16 @@ export function setRegisterValue(register: Register, value: number) {
       registers.writeUint16(registersMap[register], value);
       break;
     case regAF:
-      registers.writeUint8(registersMap[regA], (value >> 8) & 0xff);
-      registers.writeUint8(registersMap[regF], value & 0xff);
+      registers.writeUint16(registersMap[regF], value);
       break;
     case regBC:
-      registers.writeUint8(registersMap[regB], (value >> 8) & 0xff);
-      registers.writeUint8(registersMap[regC], value & 0xff);
+      registers.writeUint16(registersMap[regC], value);
       break;
     case regDE:
-      registers.writeUint8(registersMap[regD], (value >> 8) & 0xff);
-      registers.writeUint8(registersMap[regE], value & 0xff);
+      registers.writeUint16(registersMap[regE], value);
       break;
     case regHL:
-      registers.writeUint8(registersMap[regH], (value >> 8) & 0xff);
-      registers.writeUint8(registersMap[regL], value & 0xff);
+      registers.writeUint16(registersMap[regL], value);
       break;
     default:
       throw new Error('Invalid register');
@@ -132,21 +137,13 @@ export function getRegisterValue(register: Register) {
     case regPC:
       return registers.readUint16(registersMap[register]);
     case regAF:
-      return (
-        (registers.readUint8(registersMap[regA]) << 8) | registers.readUint8(registersMap[regF])
-      );
+      return registers.readUint16(registersMap[regF]);
     case regBC:
-      return (
-        (registers.readUint8(registersMap[regB]) << 8) | registers.readUint8(registersMap[regC])
-      );
+      return registers.readUint16(registersMap[regC]);
     case regDE:
-      return (
-        (registers.readUint8(registersMap[regD]) << 8) | registers.readUint8(registersMap[regE])
-      );
+      return registers.readUint16(registersMap[regE]);
     case regHL:
-      return (
-        (registers.readUint8(registersMap[regH]) << 8) | registers.readUint8(registersMap[regL])
-      );
+      return registers.readUint16(registersMap[regL]);
     default:
       throw new Error('Invalid register');
   }
