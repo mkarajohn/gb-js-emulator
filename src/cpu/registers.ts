@@ -230,20 +230,20 @@ export function writeRegisterHL(value: number) {
 }
 
 export const registerNames = {
-  regA: 'A',
-  regB: 'B',
-  regC: 'C',
-  regD: 'D',
-  regE: 'E',
-  regF: 'F',
-  regH: 'H',
-  regL: 'L',
-  regSP: 'SP',
-  regPC: 'PC',
-  regAF: 'AF',
-  regBC: 'BC',
-  regDE: 'DE',
-  regHL: 'HL',
+  regA,
+  regB,
+  regC,
+  regD,
+  regE,
+  regF,
+  regH,
+  regL,
+  regSP,
+  regPC,
+  regAF,
+  regBC,
+  regDE,
+  regHL,
 } as const;
 
 //@ts-ignore
