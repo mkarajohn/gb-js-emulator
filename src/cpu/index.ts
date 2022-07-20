@@ -1,7 +1,7 @@
 import { clock } from 'clock';
+import { instructions } from 'cpu/instructions';
 import { readUint8 } from 'cpu/read';
 import { readRegisterPC } from 'cpu/registers';
-import { instructions } from 'instructions';
 import { memory } from 'memory';
 
 function fetch() {

@@ -1,4 +1,4 @@
-import { cbInstructions } from 'cb-instructions';
+import { cbInstructions } from 'cpu/cb-instructions';
 import { readUint8 } from 'cpu/read';
 import {
   readRegister,
