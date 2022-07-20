@@ -1,6 +1,6 @@
 import { bootCode } from 'bootROM';
 import { clock } from 'clock';
-import { cpu } from 'cpu/cpu';
+import { cpu } from 'cpu';
 import disassemble from 'disassembler';
 import { memory } from 'memory';
 import { Fragment, useEffect, useState } from 'react';
