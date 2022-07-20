@@ -5328,7 +5328,7 @@ export const instructionSet: InstructionToken[] = [
   },
 ];
 
-export const cbPrefixedOpcodes: InstructionToken[] = [
+export const cbPrefixedInstructionSet: InstructionToken[] = [
   {
     opcode: 0x00,
     mnemonic: 'RLC',

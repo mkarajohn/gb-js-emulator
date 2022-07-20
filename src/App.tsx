@@ -1,11 +1,17 @@
-import { enableBootROM, readBootROM } from 'bootROM';
-import { cpu } from 'cpu';
+import { bootCode } from 'bootROM';
+import { clock } from 'clock';
+import { cpu } from 'cpu/cpu';
 import disassemble from 'disassembler';
 import { memory } from 'memory';
 import { Fragment, useEffect, useState } from 'react';
 
-const emptyBootcode = new Uint8Array(256);
-const bootCode = readBootROM();
+const emptyBootcode = new Uint8Array(0x0100);
+
+function powerOn() {
+  memory.initialise();
+  clock.subscribe(cpu.run);
+  clock.start();
+}
 
 function App() {
   const [loadedBootCode, setLoadedBootCode] = useState(emptyBootcode);
@@ -16,11 +22,7 @@ function App() {
     }, 500);
   }, []);
 
-  useEffect(() => {
-    enableBootROM();
-    memory.load(bootCode);
-    cpu.run();
-  }, []);
+  useEffect(powerOn, []);
 
   //@ts-ignore
   window.bootCode = bootCode;

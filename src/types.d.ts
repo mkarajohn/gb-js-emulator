@@ -59,3 +59,5 @@ type InstructionToken = {
   immediate: boolean;
   flags: Flags;
 };
+
+export type RegisterToken = { name: SingleRegister; bits: 8 | 16; initialValue: number };

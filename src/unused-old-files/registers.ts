@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import { createMemory } from 'factories/create-memory';
 import { Register, SingleRegister } from 'types';
 
@@ -69,6 +71,7 @@ const registers = createMemory(
   }, 0)
 );
 
+// Initialise registers
 registerTokens.forEach((token) => {
   if (token.bits === 8) {
     registers.writeUint8(registersMap[token.name], token.initialValue);

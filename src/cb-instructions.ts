@@ -1,18 +1,14 @@
-import { cbPrefixedOpcodes, instructionSet } from 'instruction-set';
-import { memory } from 'memory';
+import { readUint8 } from 'cpu/read';
 import {
-  getRegisterValue,
-  regA,
-  regB,
-  regC,
-  regD,
-  regE,
-  regF,
-  regH,
-  regL,
-  regPC,
-  setRegisterValue,
-} from 'registers';
+  readRegister,
+  readRegisterF,
+  readRegisterPC,
+  registerNames,
+  writeRegisterF,
+  writeRegisterPC,
+} from 'cpu/registers';
+import { cbPrefixedInstructionSet, instructionSet } from 'instruction-set';
+import { memory } from 'memory';
 import { InstructionToken, Register } from 'types';
 
 let index = 0;
@@ -24,7 +20,7 @@ function logInstruction(name, instructionToken) {
 
 function nop() {
   logInstruction('NOP', instructionSet[0x00]);
-  setRegisterValue(regPC, getRegisterValue(regPC) + 1);
+  writeRegisterPC(readRegisterPC() + 1);
 
   return 4;
 }
@@ -32,11 +28,12 @@ function nop() {
 function bit(instructionToken: InstructionToken) {
   const { operands, cycles, bytes } = instructionToken;
   const [bit, register] = operands;
+  const { regA, regB, regC, regD, regE, regF, regH, regL } = registerNames;
 
   const checkBit = 1 << (bit.name as number);
 
   function setFlags(value) {
-    const currentRegFValue = getRegisterValue(regF);
+    const currentRegFValue = readRegisterF();
 
     const ZFlag = (value & checkBit) === 0 ? 0b10000000 : 0b00000000;
     const NFlag = 0b00000000;
@@ -57,12 +54,12 @@ function bit(instructionToken: InstructionToken) {
     case regL:
       return function () {
         logInstruction('BIT', instructionToken);
-        const registerValue = getRegisterValue(register.name as Register);
+        const registerValue = readRegister(register.name as Register);
 
         // update Z flag, reset flag N, set flag H
-        setRegisterValue(regF, setFlags(registerValue));
+        writeRegisterF(setFlags(registerValue));
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        writeRegisterPC(readRegisterPC() + bytes);
 
         return cycles[0];
       };
@@ -71,12 +68,12 @@ function bit(instructionToken: InstructionToken) {
       // register HL
       return function () {
         logInstruction('BIT', instructionToken);
-        const registerValue = memory.readUint8(getRegisterValue(register.name as Register));
+        const registerValue = readUint8(memory, readRegister(register.name as Register));
 
         // update Z flag, reset flag N, set flag H
-        setRegisterValue(regF, setFlags(registerValue));
+        writeRegisterF(setFlags(registerValue));
 
-        setRegisterValue(regPC, getRegisterValue(regPC) + bytes);
+        writeRegisterPC(readRegisterPC() + bytes);
 
         return cycles[0];
       };
@@ -89,7 +86,7 @@ for (let i = 0; i < cbInstructions.length; i++) {
   cbInstructions[i] = nop;
 }
 
-cbInstructions[0x7c] = bit(cbPrefixedOpcodes[0x7c]);
+cbInstructions[0x7c] = bit(cbPrefixedInstructionSet[0x7c]);
 
 //@ts-ignore
 window.cbInstructions = cbInstructions;

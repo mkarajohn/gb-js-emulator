@@ -1,4 +1,4 @@
-import { cbPrefixedOpcodes, instructionSet } from 'instruction-set';
+import { cbPrefixedInstructionSet, instructionSet } from 'instruction-set';
 import type { InstructionToken, Operand } from 'types.d';
 import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from 'utils';
 import type { DisassembledInstructionToken } from './types.d';
@@ -82,7 +82,8 @@ export default function disassemble(bytecode: Uint8Array, dataRanges: [number, n
         switch (opcode) {
           // opcode 0xcb references opcodesDEPRECATED from the CB opcode dictionary so it needs special handling
           case convertHexStringToDecimalNumber('0xcb'): {
-            const referencedObOpcodeToken = cbPrefixedOpcodes[bytecode[i + instructionToken.bytes]];
+            const referencedObOpcodeToken =
+              cbPrefixedInstructionSet[bytecode[i + instructionToken.bytes]];
             disassembledCode.push(
               generateDisassembledInstructionToken(referencedObOpcodeToken, bytecode, i)
             );

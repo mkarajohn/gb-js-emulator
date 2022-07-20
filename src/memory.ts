@@ -1,3 +1,6 @@
+import { bootCode } from 'bootROM';
+import { createMemory } from 'factories/create-memory';
+
 /*
  * MEMORY MAP
  *
@@ -20,13 +23,18 @@
  *
  */
 
-import { createMemory } from 'factories/create-memory';
+function initialise() {
+  memory.load(new Uint8Array(Array(0x10000).fill(1)));
+  memory.load(bootCode);
+  memory.setUint8(0x0100, 0xc3);
+  memory.setUint8(0x0101, 0);
+  memory.setUint8(0x0102, 0);
+}
 
-export const memory = createMemory(0x10000);
-memory.load(new Uint8Array(Array(0x10000).fill(1)));
-memory.writeUint8(0x0100, 0xc3);
-memory.writeUint8(0x0101, 0);
-memory.writeUint8(0x0102, 0);
+export const memory = {
+  ...createMemory(0x10000),
+  initialise,
+};
 
 //@ts-ignore
 window.memory = memory;
