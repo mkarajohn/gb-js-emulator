@@ -4,8 +4,18 @@ import { readRegisterPC } from 'cpu/registers';
 import { instructions } from 'instructions';
 import { memory } from 'memory';
 
-function fetch(address) {
-  return instructions[readUint8(memory, address)];
+function fetch() {
+  const PC = readRegisterPC();
+  const opcode = readUint8(memory, PC);
+
+  if (PC < 0x14 || PC === 0x0100) {
+    return instructions[opcode];
+  } else {
+    console.log('exiting');
+    clock.stop();
+
+    return instructions[0];
+  }
 }
 
 function execute(instruction: () => number) {
@@ -14,15 +24,10 @@ function execute(instruction: () => number) {
 
 function run() {
   try {
-    const address = readRegisterPC();
-    if (address < 0x14 || address === 0x0100) {
-      execute(fetch(address));
-    } else {
-      console.log('exiting');
-      clock.stop();
-    }
+    execute(fetch());
   } catch (err) {
     console.log(err);
+    clock.stop();
   }
 }
 

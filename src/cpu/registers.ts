@@ -29,16 +29,16 @@ const regHL = 'HL';
 // n+1 A
 // To be in line with little endianness.
 const registersMap = {
-  [regF]: 0, // AF pair
-  [regA]: 1, // AF pair
-  [regC]: 2, // BC pair
-  [regB]: 3, // BC pair
-  [regE]: 4, // DE pair
-  [regD]: 5, // DE pair
-  [regL]: 6, // HL pair
-  [regH]: 7, // HL pair
-  [regSP]: 8,
-  [regPC]: 10,
+  [regF]: 0x0, // AF pair
+  [regA]: 0x1, // AF pair
+  [regC]: 0x2, // BC pair
+  [regB]: 0x3, // BC pair
+  [regE]: 0x4, // DE pair
+  [regD]: 0x5, // DE pair
+  [regL]: 0x6, // HL pair
+  [regH]: 0x7, // HL pair
+  [regSP]: 0x8,
+  [regPC]: 0xa,
 };
 
 const registerAAddress = registersMap[regA];

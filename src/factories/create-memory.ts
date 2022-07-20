@@ -14,8 +14,8 @@ export function createMemory(size: number) {
   return {
     dump,
     load,
-    setUint8: view.setUint8,
-    getUint8: view.getUint8,
+    setUint8: view.setUint8.bind(view),
+    getUint8: view.getUint8.bind(view),
   };
 }
 
