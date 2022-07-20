@@ -57,66 +57,26 @@ const registers = createMemory(8 + 2 * 2); // 8 * 1 byte + 2 * 2 bytes
 // Initialise registers
 writeRegisterPC(0x0100);
 
-export function writeRegister(register: Register, value: number) {
-  switch (register) {
-    case regA:
-    case regB:
-    case regC:
-    case regD:
-    case regE:
-    case regF:
-    case regH:
-    case regL:
-      writeUint8(registers, registersMap[register], value);
-      break;
-    case regSP:
-    case regPC:
-      writeUint16(registers, registersMap[register], value);
-      break;
-    case regAF:
-      writeUint16(registers, registerFAddress, value);
-      break;
-    case regBC:
-      writeUint16(registers, registerCAddress, value);
-      break;
-    case regDE:
-      writeUint16(registers, registerEAddress, value);
-      break;
-    case regHL:
-      writeUint16(registers, registerLAddress, value);
-      break;
-    default:
-      throw new Error('Invalid register');
-  }
-}
+export const registerNames = {
+  regA,
+  regB,
+  regC,
+  regD,
+  regE,
+  regF,
+  regH,
+  regL,
+  regSP,
+  regPC,
+  regAF,
+  regBC,
+  regDE,
+  regHL,
+} as const;
 
-export function readRegister(register: Register) {
-  switch (register) {
-    case regA:
-    case regB:
-    case regC:
-    case regD:
-    case regE:
-    case regF:
-    case regH:
-    case regL:
-      return readUint8(registers, registersMap[register]);
-    case regSP:
-    case regPC:
-      return readUint16(registers, registersMap[register]);
-    case regAF:
-      return readUint16(registers, registerFAddress);
-    case regBC:
-      return readUint16(registers, registerCAddress);
-    case regDE:
-      return readUint16(registers, registerEAddress);
-    case regHL:
-      return readUint16(registers, registerLAddress);
-    default:
-      throw new Error('Invalid register');
-  }
-}
-
+/**
+ * Specific register read functions
+ */
 export function readRegisterA() {
   return readUint8(registers, registerAAddress);
 }
@@ -173,6 +133,9 @@ export function readRegisterHL() {
   return readUint16(registers, registerLAddress);
 }
 
+/**
+ * Specific register write functions
+ */
 export function writeRegisterA(value: number) {
   writeUint8(registers, registerAAddress, value);
 }
@@ -229,22 +192,98 @@ export function writeRegisterHL(value: number) {
   writeUint16(registers, registerLAddress, value);
 }
 
-export const registerNames = {
-  regA,
-  regB,
-  regC,
-  regD,
-  regE,
-  regF,
-  regH,
-  regL,
-  regSP,
-  regPC,
-  regAF,
-  regBC,
-  regDE,
-  regHL,
-} as const;
+/**
+ * Generic register write function
+ * @param register
+ * @param value
+ */
+export function writeRegister(register: Register, value: number) {
+  switch (register) {
+    case regA:
+      writeRegisterA(value);
+      break;
+    case regB:
+      writeRegisterB(value);
+      break;
+    case regC:
+      writeRegisterC(value);
+      break;
+    case regD:
+      writeRegisterD(value);
+      break;
+    case regE:
+      writeRegisterE(value);
+      break;
+    case regF:
+      writeRegisterF(value);
+      break;
+    case regH:
+      writeRegisterH(value);
+      break;
+    case regL:
+      writeRegisterL(value);
+      break;
+    case regSP:
+      writeRegisterSP(value);
+      break;
+    case regPC:
+      writeRegisterPC(value);
+      break;
+    case regAF:
+      writeRegisterAF(value);
+      break;
+    case regBC:
+      writeRegisterBC(value);
+      break;
+    case regDE:
+      writeRegisterDE(value);
+      break;
+    case regHL:
+      writeRegisterHL(value);
+      break;
+    default:
+      throw new Error('Invalid register');
+  }
+}
+
+/**
+ * Generic register read function
+ * @param register
+ */
+export function readRegister(register: Register) {
+  switch (register) {
+    case regA:
+      return readRegisterA();
+    case regB:
+      return readRegisterB();
+    case regC:
+      return readRegisterC();
+    case regD:
+      return readRegisterD();
+    case regE:
+      return readRegisterE();
+    case regF:
+      return readRegisterF();
+    case regH:
+      return readRegisterH();
+    case regL:
+      return readRegisterL();
+    case regSP:
+      return readRegisterSP();
+    case regPC:
+      return readRegisterPC();
+    case regAF:
+      return readRegisterAF();
+    case regBC:
+      return readRegisterBC();
+    case regDE:
+      return readRegisterDE();
+    case regHL:
+      return readRegisterHL();
+    default:
+      throw new Error('Invalid register');
+  }
+}
 
 //@ts-ignore
 window.registers = registers;
