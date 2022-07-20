@@ -18,6 +18,10 @@ const regBC = 'BC';
 const regDE = 'DE';
 const regHL = 'HL';
 
+const registers = createMemory(8 + 2 * 2); // 8 * 1 byte + 2 * 2 bytes
+// Initialise registers
+writeRegisterPC(0x0100);
+
 // The whole point of this ordering is to be able to read register pairs with the existing
 // read/writeUint16 methods. Since the system is little endian, 2 byte values are written and read
 // with the low byte at address n and the high byte at address n+1.
@@ -28,34 +32,16 @@ const regHL = 'HL';
 // n F
 // n+1 A
 // To be in line with little endianness.
-const registersMap = {
-  [regF]: 0x0, // AF pair
-  [regA]: 0x1, // AF pair
-  [regC]: 0x2, // BC pair
-  [regB]: 0x3, // BC pair
-  [regE]: 0x4, // DE pair
-  [regD]: 0x5, // DE pair
-  [regL]: 0x6, // HL pair
-  [regH]: 0x7, // HL pair
-  [regSP]: 0x8,
-  [regPC]: 0xa,
-};
-
-const registerAAddress = registersMap[regA];
-const registerBAddress = registersMap[regB];
-const registerCAddress = registersMap[regC];
-const registerDAddress = registersMap[regD];
-const registerEAddress = registersMap[regE];
-const registerFAddress = registersMap[regF];
-const registerHAddress = registersMap[regH];
-const registerLAddress = registersMap[regL];
-const registerSPAddress = registersMap[regSP];
-const registerPCAddress = registersMap[regPC];
-
-const registers = createMemory(8 + 2 * 2); // 8 * 1 byte + 2 * 2 bytes
-
-// Initialise registers
-writeRegisterPC(0x0100);
+const f_addr = 0x0;
+const a_addr = 0x1;
+const c_addr = 0x2;
+const b_addr = 0x3;
+const e_addr = 0x4;
+const d_addr = 0x5;
+const l_addr = 0x6;
+const h_addr = 0x7;
+const sp_addr = 0x8;
+const pc_addr = 0xa;
 
 export const registerNames = {
   regA,
@@ -78,118 +64,118 @@ export const registerNames = {
  * Specific register read functions
  */
 export function readRegisterA() {
-  return readUint8(registers, registerAAddress);
+  return readUint8(registers, a_addr);
 }
 
 export function readRegisterB() {
-  return readUint8(registers, registerBAddress);
+  return readUint8(registers, b_addr);
 }
 
 export function readRegisterC() {
-  return readUint8(registers, registerCAddress);
+  return readUint8(registers, c_addr);
 }
 
 export function readRegisterD() {
-  return readUint8(registers, registerDAddress);
+  return readUint8(registers, d_addr);
 }
 
 export function readRegisterE() {
-  return readUint8(registers, registerEAddress);
+  return readUint8(registers, e_addr);
 }
 
 export function readRegisterF() {
-  return readUint8(registers, registerFAddress);
+  return readUint8(registers, f_addr);
 }
 
 export function readRegisterH() {
-  return readUint8(registers, registerHAddress);
+  return readUint8(registers, h_addr);
 }
 
 export function readRegisterL() {
-  return readUint8(registers, registerLAddress);
+  return readUint8(registers, l_addr);
 }
 
 export function readRegisterSP() {
-  return readUint16(registers, registerSPAddress);
+  return readUint16(registers, sp_addr);
 }
 
 export function readRegisterPC() {
-  return readUint16(registers, registerPCAddress);
+  return readUint16(registers, pc_addr);
 }
 
 export function readRegisterAF() {
-  return readUint16(registers, registerFAddress);
+  return readUint16(registers, f_addr);
 }
 
 export function readRegisterBC() {
-  return readUint16(registers, registerCAddress);
+  return readUint16(registers, c_addr);
 }
 
 export function readRegisterDE() {
-  return readUint16(registers, registerEAddress);
+  return readUint16(registers, e_addr);
 }
 
 export function readRegisterHL() {
-  return readUint16(registers, registerLAddress);
+  return readUint16(registers, l_addr);
 }
 
 /**
  * Specific register write functions
  */
 export function writeRegisterA(value: number) {
-  writeUint8(registers, registerAAddress, value);
+  writeUint8(registers, a_addr, value);
 }
 
 export function writeRegisterB(value: number) {
-  writeUint8(registers, registerBAddress, value);
+  writeUint8(registers, b_addr, value);
 }
 
 export function writeRegisterC(value: number) {
-  writeUint8(registers, registerCAddress, value);
+  writeUint8(registers, c_addr, value);
 }
 
 export function writeRegisterD(value: number) {
-  writeUint8(registers, registerDAddress, value);
+  writeUint8(registers, d_addr, value);
 }
 
 export function writeRegisterE(value: number) {
-  writeUint8(registers, registerEAddress, value);
+  writeUint8(registers, e_addr, value);
 }
 
 export function writeRegisterF(value: number) {
-  writeUint8(registers, registerFAddress, value);
+  writeUint8(registers, f_addr, value);
 }
 
 export function writeRegisterH(value: number) {
-  writeUint8(registers, registerHAddress, value);
+  writeUint8(registers, h_addr, value);
 }
 
 export function writeRegisterL(value: number) {
-  writeUint8(registers, registerLAddress, value);
+  writeUint8(registers, l_addr, value);
 }
 
 export function writeRegisterSP(value: number) {
-  writeUint16(registers, registerSPAddress, value);
+  writeUint16(registers, sp_addr, value);
 }
 
 export function writeRegisterPC(value: number) {
-  writeUint16(registers, registerPCAddress, value);
+  writeUint16(registers, pc_addr, value);
 }
 
 export function writeRegisterAF(value: number) {
-  writeUint16(registers, registerFAddress, value);
+  writeUint16(registers, f_addr, value);
 }
 
 export function writeRegisterBC(value: number) {
-  writeUint16(registers, registerCAddress, value);
+  writeUint16(registers, c_addr, value);
 }
 
 export function writeRegisterDE(value: number) {
-  writeUint16(registers, registerEAddress, value);
+  writeUint16(registers, e_addr, value);
 }
 
 export function writeRegisterHL(value: number) {
-  writeUint16(registers, registerLAddress, value);
+  writeUint16(registers, l_addr, value);
 }
 
 /**
