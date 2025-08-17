@@ -1,5 +1,5 @@
-import { cbInstructions } from 'cpu/cb-instructions';
-import { readUint8 } from 'cpu/read';
+import { cbInstructions } from '~/cpu/cb-instructions';
+import { readUint8 } from '~/cpu/read';
 import {
   readRegister,
   readRegisterA,
@@ -12,12 +12,12 @@ import {
   writeRegisterF,
   writeRegisterHL,
   writeRegisterPC,
-} from 'cpu/registers';
-import { writeUint8 } from 'cpu/write';
-import { instructionSet } from 'instruction-set';
-import { memory } from 'memory';
-import { InstructionToken, Register } from 'types';
-import { convertNumberToHexString, signedOffset } from 'utils';
+} from '~/cpu/registers';
+import { writeUint8 } from '~/cpu/write';
+import { instructionSet } from '~/instruction-set';
+import { memory } from '~/memory';
+import type { InstructionToken, Register } from '~/types';
+import { convertNumberToHexString, signedOffset } from '~/utils';
 
 let index = 0;
 

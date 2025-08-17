@@ -7,11 +7,11 @@ const timer = {
   m: 0, // M-Cycle
 };
 
-export function writeTimerT(value) {
+export function writeTimerT(value: number) {
   timer.t = value;
 }
 
-export function incTimerT(value) {
+export function incTimerT(value: number) {
   writeTimerT(timer.t + value);
 }
 
@@ -19,11 +19,11 @@ export function readTimerT() {
   return timer.t;
 }
 
-export function writeTimerM(value) {
+export function writeTimerM(value: number) {
   timer.m = value;
 }
 
-export function incTimerM(value) {
+export function incTimerM(value: number) {
   writeTimerM(timer.m + value);
 }
 

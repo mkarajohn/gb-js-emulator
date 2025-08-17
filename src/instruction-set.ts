@@ -1,4 +1,4 @@
-import { InstructionToken } from 'types';
+import type { InstructionToken } from '~/types.ts';
 
 export const instructionSet: InstructionToken[] = [
   {

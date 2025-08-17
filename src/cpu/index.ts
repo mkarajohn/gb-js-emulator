@@ -1,8 +1,8 @@
-import { clock } from 'clock';
-import { instructions } from 'cpu/instructions';
-import { readUint8 } from 'cpu/read';
-import { readRegisterPC } from 'cpu/registers';
-import { memory } from 'memory';
+import { clock } from '~/clock';
+import { instructions } from '~/cpu/instructions';
+import { readUint8 } from '~/cpu/read';
+import { readRegisterPC } from '~/cpu/registers';
+import { memory } from '~/memory';
 
 function fetch() {
   const PC = readRegisterPC();

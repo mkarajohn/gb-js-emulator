@@ -44,7 +44,7 @@ export type Operand =
   | 6
   | 7;
 
-type InstructionToken = {
+export type InstructionToken = {
   opcode: number;
   mnemonic: string;
   bytes: number;

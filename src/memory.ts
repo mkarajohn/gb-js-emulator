@@ -1,5 +1,5 @@
-import { bootCode } from 'bootROM';
-import { createMemory } from 'factories/create-memory';
+import { bootCode } from '~/bootROM';
+import { createMemory } from '~/factories/create-memory';
 
 /*
  * MEMORY MAP

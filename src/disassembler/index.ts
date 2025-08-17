@@ -1,7 +1,7 @@
-import { cbPrefixedInstructionSet, instructionSet } from 'instruction-set';
-import type { InstructionToken, Operand } from 'types.d';
-import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from 'utils';
-import type { DisassembledInstructionToken } from './types.d';
+import { cbPrefixedInstructionSet, instructionSet } from '~/instruction-set';
+import type { InstructionToken, Operand } from '~/types.ts';
+import { convertHexStringToDecimalNumber, convertNumberToHexString, zeroPad } from '~/utils';
+import type { DisassembledInstructionToken } from './types';
 
 function replaceOperandTypeWithValue(operand: Operand, bytecode: Uint8Array, index: number) {
   switch (operand) {

@@ -1,4 +1,4 @@
-import { OperandTypes } from 'types';
+import { OperandTypes } from '~/types';
 
 export type OpcodeToken = {
   instruction: string;

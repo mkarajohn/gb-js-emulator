@@ -1,4 +1,4 @@
-import { readUint8 } from 'cpu/read';
+import { readUint8 } from '~/cpu/read';
 import {
   readRegister,
   readRegisterF,
@@ -6,10 +6,10 @@ import {
   registerNames,
   writeRegisterF,
   writeRegisterPC,
-} from 'cpu/registers';
-import { cbPrefixedInstructionSet, instructionSet } from 'instruction-set';
-import { memory } from 'memory';
-import { InstructionToken, Register } from 'types';
+} from '~/cpu/registers';
+import { cbPrefixedInstructionSet, instructionSet } from '~/instruction-set';
+import { memory } from '~/memory';
+import type { InstructionToken, Register } from '~/types';
 
 let index = 0;
 
@@ -32,7 +32,7 @@ function bit(instructionToken: InstructionToken) {
 
   const checkBit = 1 << (bit.name as number);
 
-  function setFlags(value) {
+  function setFlags(value: number) {
     const currentRegFValue = readRegisterF();
 
     const ZFlag = (value & checkBit) === 0 ? 0b10000000 : 0b00000000;

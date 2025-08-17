@@ -1,4 +1,4 @@
-import type { Memory } from 'factories/create-memory';
+import type { Memory } from '~/factories/create-memory';
 
 // Read 8-bit byte from address
 export function readUint8(memory: Memory, address: number) {

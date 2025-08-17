@@ -1,7 +1,7 @@
-import { readUint16, readUint8 } from 'cpu/read';
-import { writeUint16, writeUint8 } from 'cpu/write';
-import { createMemory } from 'factories/create-memory';
-import type { Register } from 'types';
+import { readUint16, readUint8 } from '~/cpu/read';
+import { writeUint16, writeUint8 } from '~/cpu/write';
+import { createMemory } from '~/factories/create-memory';
+import type { Register } from '~/types';
 
 const regA = 'A';
 const regB = 'B';
